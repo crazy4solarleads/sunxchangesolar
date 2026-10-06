@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>One Smart Home</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #eef8ff;
+      color: #17212b;
+    }
+
+    /* MENU */
+    nav {
+      background: #111827;
+      color: white;
+      padding: 18px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav h2 {
+      color: #4ade80;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #4ade80;
+    }
+
+    /* MAIN AREA */
+    .hero {
+      min-height: 85vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 100px;
+      padding: 50px;
+    }
+
+    .text h1 {
+      font-size: 48px;
+      margin-bottom: 15px;
+    }
+
+    .text p {
+      font-size: 20px;
+      color: #555;
+    }
+
+    /* STICK FIGURE */
+    .person {
+      position: relative;
+      width: 160px;
+      height: 300px;
+    }
+
+    .head {
+      width: 65px;
+      height: 65px;
+      border: 6px solid #111;
+      border-radius: 50%;
+      margin: auto;
+    }
+
+    .body {
+      width: 6px;
+      height: 110px;
+      background: #111;
+      margin: auto;
+    }
+
+    .arms {
+      position: absolute;
+      width: 130px;
+      height: 6px;
+      background: #111;
+      top: 105px;
+      left: 15px;
+      transform: rotate(-8deg);
+    }
+
+    .leg1, .leg2 {
+      position: absolute;
+      width: 6px;
+      height: 110px;
+      background: #111;
+      top: 165px;
+      left: 78px;
+      transform-origin: top;
+    }
+
+    .leg1 {
+      transform: rotate(25deg);
+    }
+
+    .leg2 {
+      transform: rotate(-25deg);
+    }
+
+    /* SOLAR PANEL */
+    .solar-panel {
+      width: 220px;
+      height: 140px;
+      background: #1261a0;
+      border: 8px solid #222;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      transform: rotate(-8deg);
+      box-shadow: 8px 12px 20px rgba(0,0,0,.2);
+    }
+
+    .cell {
+      border: 2px solid #7ec8ff;
+    }
+
+    .panel-stand {
+      width: 8px;
+      height: 80px;
+      background: #222;
+      margin: auto;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: #111827;
+      color: white;
+    }
+
+    @media(max-width: 700px) {
+      .hero {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+      }
+
+      nav ul {
+        gap: 10px;
+        font-size: 14px;
+      }
+
+      .text h1 {
+        font-size: 36px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<nav>
+  <h2>☀ One Smart Home</h2>
+
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Solar</a></li>
+    <li><a href="#">Battery</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+
+  <div class="text">
+    <h1>Solar Test Website</h1>
+    <p>Our new website is coming soon.</p>
+  </div>
+
+  <div class="person">
+    <div class="head"></div>
+    <div class="arms"></div>
+    <div class="body"></div>
+    <div class="leg1"></div>
+    <div class="leg2"></div>
+  </div>
+
+  <div>
+    <div class="solar-panel">
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+    </div>
+
+    <div class="panel-stand"></div>
+  </div>
+
+</section>
+
+<footer>
+  One Smart Home • GitHub Pages Test
+</footer>
+
+</body>
+</html>
