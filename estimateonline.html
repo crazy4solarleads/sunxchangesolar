@@ -24,8 +24,8 @@ h1 em{font-style:normal;color:var(--cy);text-shadow:0 0 18px var(--cy)}
 .prog i.on{background:linear-gradient(90deg,var(--cy),var(--gr));box-shadow:0 0 10px var(--cy)}
 .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;backdrop-filter:blur(8px);box-shadow:0 0 40px rgba(0,229,255,.08)}
 .step{display:none}.step.on{display:block}
-.frame{height:520px}
-.frame iframe{width:100%;height:100%;border:none;border-radius:8px;background:#fff}
+.frame{min-height:520px}
+.frame iframe{width:100%;min-height:520px;border:none;border-radius:8px;background:#fff}
 .grid{display:grid;grid-template-columns:1.3fr 1fr;gap:16px}
 @media(max-width:820px){.grid{grid-template-columns:1fr}}
 h2{font-family:Orbitron,sans-serif;font-size:17px;margin-bottom:10px;color:var(--cy)}
@@ -53,6 +53,11 @@ svg{width:100%;height:auto;display:block;border-radius:12px;background:linear-gr
 input[type=range]{width:100%;accent-color:var(--cy)}
 .sun{animation:p 3s ease-in-out infinite}@keyframes p{50%{opacity:.6;transform:scale(1.08)}}
 .sun{transform-origin:520px 60px}
+.cta{position:sticky;bottom:10px;z-index:20;margin-top:14px;box-shadow:0 0 24px rgba(255,184,0,.55),0 10px 30px rgba(0,0,0,.6)}
+.hint{display:none;text-align:center;color:var(--am);font-weight:800;font-size:14px;margin-top:10px;animation:pl 1s infinite}
+.hint.show{display:block}
+.cta.pulse{animation:pl 1s ease-in-out infinite}
+@keyframes pl{50%{transform:scale(1.03);filter:brightness(1.25)}}
 .foot{text-align:center;color:var(--mu);font-size:11px;margin-top:18px}
 </style>
 </head>
@@ -67,10 +72,11 @@ input[type=range]{width:100%;accent-color:var(--cy)}
   <section class="step on" id="s1"><div class="card">
     <h2>Step 1 &middot; Let's Start Your Design</h2>
     <div class="frame">
-<iframe src="https://api.leadconnectorhq.com/widget/form/MKNE9RSWbNZW4QQscfdJ" style="width:100%;height:100%;border:none;border-radius:8px" id="inline-MKNE9RSWbNZW4QQscfdJ" data-layout="{'id':'INLINE'}" data-trigger-type="alwaysShow" data-trigger-value="" data-activation-type="alwaysActivated" data-activation-value="" data-deactivation-type="neverDeactivate" data-deactivation-value="" data-form-name="Screen1" data-height="434" data-layout-iframe-id="inline-MKNE9RSWbNZW4QQscfdJ" data-form-id="MKNE9RSWbNZW4QQscfdJ" data-cookie-consent="true" data-cookie-consent-provider="auto" title="Screen1"></iframe>
+<iframe src="https://api.leadconnectorhq.com/widget/form/MKNE9RSWbNZW4QQscfdJ" style="width:100%;min-height:520px;border:none;border-radius:8px" id="inline-MKNE9RSWbNZW4QQscfdJ" data-layout="{'id':'INLINE'}" data-trigger-type="alwaysShow" data-trigger-value="" data-activation-type="alwaysActivated" data-activation-value="" data-deactivation-type="neverDeactivate" data-deactivation-value="" data-form-name="Screen1" data-height="434" data-layout-iframe-id="inline-MKNE9RSWbNZW4QQscfdJ" data-form-id="MKNE9RSWbNZW4QQscfdJ" data-cookie-consent="true" data-cookie-consent-provider="auto" title="Screen1"></iframe>
     </div>
     <p class="foot" style="margin:8px 0 0">Form not showing? <a style="color:var(--cy)" target="_blank" rel="noopener" href="https://api.leadconnectorhq.com/widget/form/MKNE9RSWbNZW4QQscfdJ">Open it directly</a></p>
-    <button class="btn ghost" onclick="go(2)">I submitted my info &rarr; Open the simulator</button>
+    <p class="hint" id="h1">Finished the form? Tap Continue to see your custom design &darr;</p>
+    <button class="btn cta" onclick="go(2)">Continue &rarr; See My Custom Design</button>
   </div></section>
 
   <!-- STEP 2: simulator -->
@@ -98,10 +104,11 @@ input[type=range]{width:100%;accent-color:var(--cy)}
   <section class="step" id="s3"><div class="card">
     <h2>Step 3 &middot; Tell Us About Your Energy Bill</h2>
     <div class="frame">
-<iframe src="https://api.leadconnectorhq.com/widget/form/Ti8PwO1KG6mHZPj5uDaw" style="width:100%;height:100%;border:none;border-radius:8px" id="inline-Ti8PwO1KG6mHZPj5uDaw" data-layout="{'id':'INLINE'}" data-trigger-type="alwaysShow" data-trigger-value="" data-activation-type="alwaysActivated" data-activation-value="" data-deactivation-type="neverDeactivate" data-deactivation-value="" data-form-name="screen2" data-height="undefined" data-layout-iframe-id="inline-Ti8PwO1KG6mHZPj5uDaw" data-form-id="Ti8PwO1KG6mHZPj5uDaw" data-cookie-consent="true" data-cookie-consent-provider="auto" title="screen2"></iframe>
+<iframe src="https://api.leadconnectorhq.com/widget/form/Ti8PwO1KG6mHZPj5uDaw" style="width:100%;min-height:520px;border:none;border-radius:8px" id="inline-Ti8PwO1KG6mHZPj5uDaw" data-layout="{'id':'INLINE'}" data-trigger-type="alwaysShow" data-trigger-value="" data-activation-type="alwaysActivated" data-activation-value="" data-deactivation-type="neverDeactivate" data-deactivation-value="" data-form-name="screen2" data-height="undefined" data-layout-iframe-id="inline-Ti8PwO1KG6mHZPj5uDaw" data-form-id="Ti8PwO1KG6mHZPj5uDaw" data-cookie-consent="true" data-cookie-consent-provider="auto" title="screen2"></iframe>
     </div>
     <p class="foot" style="margin:8px 0 0">Form not showing? <a style="color:var(--cy)" target="_blank" rel="noopener" href="https://api.leadconnectorhq.com/widget/form/Ti8PwO1KG6mHZPj5uDaw">Open it directly</a></p>
-    <button class="btn ghost" onclick="go(4)">I submitted my bill info &rarr; See my usage</button>
+    <p class="hint" id="h3">Finished the form? Tap Continue to see your usage &darr;</p>
+    <button class="btn cta" onclick="go(4)">Continue &rarr; See My Usage &amp; Savings</button>
   </div></section>
 
   <!-- STEP 4: usage -->
@@ -134,8 +141,8 @@ input[type=range]{width:100%;accent-color:var(--cy)}
       <div><p class="sub" style="text-align:left;margin:0 0 8px">Our solar expert will send you a customized demonstration. All online, no obligation!</p><ul class="eq" id="eq3"></ul>
         <div class="stats"><div><strong id="kw3">0</strong><small>kW SYSTEM</small></div><div><strong id="kwh3">0</strong><small>kWh / YEAR</small></div><div><strong id="pc3">0</strong><small>PANELS</small></div></div>
         <button class="btn ghost" onclick="go(4)">&larr; Edit my design</button></div>
-      <div class="frame" style="height:560px">
-<iframe src="https://api.leadconnectorhq.com/widget/form/USp8yN7wdaDvfd0Djaxi" style="width:100%;height:100%;border:none;border-radius:8px" id="inline-USp8yN7wdaDvfd0Djaxi" data-layout="{'id':'INLINE'}" data-trigger-type="alwaysShow" data-trigger-value="" data-activation-type="alwaysActivated" data-activation-value="" data-deactivation-type="neverDeactivate" data-deactivation-value="" data-form-name="final screen " data-height="undefined" data-layout-iframe-id="inline-USp8yN7wdaDvfd0Djaxi" data-form-id="USp8yN7wdaDvfd0Djaxi" data-cookie-consent="true" data-cookie-consent-provider="auto" title="final screen "></iframe>
+      <div class="frame" style="min-height:560px">
+<iframe src="https://api.leadconnectorhq.com/widget/form/USp8yN7wdaDvfd0Djaxi" style="width:100%;min-height:520px;border:none;border-radius:8px" id="inline-USp8yN7wdaDvfd0Djaxi" data-layout="{'id':'INLINE'}" data-trigger-type="alwaysShow" data-trigger-value="" data-activation-type="alwaysActivated" data-activation-value="" data-deactivation-type="neverDeactivate" data-deactivation-value="" data-form-name="final screen " data-height="undefined" data-layout-iframe-id="inline-USp8yN7wdaDvfd0Djaxi" data-form-id="USp8yN7wdaDvfd0Djaxi" data-cookie-consent="true" data-cookie-consent-provider="auto" title="final screen "></iframe>
       <p class="foot" style="margin:8px 0 0">Form not showing? <a style="color:var(--cy)" target="_blank" rel="noopener" href="https://api.leadconnectorhq.com/widget/form/USp8yN7wdaDvfd0Djaxi">Open it directly</a></p>
       </div>
     </div>
@@ -149,8 +156,20 @@ var S={watt:430,panels:8,batt:1,smart:false,ev:false,bill:200,step:1};
 var RATE=0.16;function kpp(){return S.watt/1000*1300}
 function setW(w){S.watt=w;draw()}
 
+var tm=null,built=false;
+function arm(n){
+  clearTimeout(tm);
+  document.querySelectorAll('.hint').forEach(function(h){h.classList.remove('show')});
+  document.querySelectorAll('.cta').forEach(function(b){b.classList.remove('pulse')});
+  if(n===1||n===3){tm=setTimeout(function(){
+    var h=document.getElementById('h'+n);if(h)h.classList.add('show');
+    var b=document.querySelector('#s'+n+' .cta');if(b){b.classList.add('pulse');b.scrollIntoView({behavior:'smooth',block:'nearest'})}
+  },5000)}
+  if(n===2&&!built){built=true;var t=S.panels;S.panels=0;draw();
+    [4,8].forEach(function(v,i){setTimeout(function(){if(S.step===2&&S.panels<=v){S.panels=Math.min(v,t);draw()}},500+i*900)});}
+}
 function go(n){
-  S.step=n;
+  S.step=n;arm(n);
   document.querySelectorAll('.step').forEach(function(e,i){e.classList.toggle('on',i+1===n)});
   document.querySelectorAll('#prog i').forEach(function(e,i){e.classList.toggle('on',i<n)});
   draw();window.scrollTo({top:0,behavior:'smooth'});
@@ -241,7 +260,7 @@ window.addEventListener('message',function(e){
 var rf=document.getElementById('roof');
 rf.addEventListener('mousemove',function(e){var r=rf.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;rf.style.transform='perspective(900px) rotateY('+(x*8)+'deg) rotateX('+(-y*6)+'deg)'});
 rf.addEventListener('mouseleave',function(){rf.style.transform=''});
-draw();
+draw();arm(1);
 </script>
 </body>
 </html>
