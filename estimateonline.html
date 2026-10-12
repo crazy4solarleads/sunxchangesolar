@@ -6,12 +6,15 @@
 <title>Design Your Solar System</title>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#050b1a;--card:rgba(10,22,48,.82);--line:rgba(0,229,255,.35);--cy:#00e5ff;--am:#ffb800;--gr:#2dff9a;--tx:#e8f1ff;--mu:#8fa6c9}
+:root{--bg:#050b1a;--card:rgba(10,22,48,.82);--line:rgba(0,229,255,.35);--cy:#00e5ff;--am:#ffb800;--gr:#2dff9a;--tx:#e8f1ff;--mu:#8fa6c9;--g1:rgba(255,184,0,.22);--g2:rgba(0,229,255,.18);--sky1:#0a1f46;--sky2:#102f55;--onacc:#001}
+html[data-theme="light"]{--bg:#eef4ff;--card:rgba(255,255,255,.94);--line:rgba(10,98,217,.28);--cy:#0a62d9;--am:#ff7a00;--gr:#12a150;--tx:#0b1d3a;--mu:#51647f;--g1:rgba(255,122,0,.14);--g2:rgba(10,98,217,.14);--sky1:#7fc3ff;--sky2:#d8efff;--onacc:#fff}
+html[data-theme="bold"]{--bg:#0b0b0b;--card:rgba(22,22,22,.92);--line:rgba(255,214,0,.4);--cy:#ffd600;--am:#ff3d00;--gr:#00e676;--tx:#ffffff;--mu:#b5b5b5;--g1:rgba(255,61,0,.22);--g2:rgba(255,214,0,.14);--sky1:#1a1a1a;--sky2:#2d2d2d;--onacc:#000}
+.brand{text-align:center;font-family:Orbitron,sans-serif;font-weight:800;font-size:18px;margin-bottom:10px;letter-spacing:.06em}
 *{box-sizing:border-box;margin:0}
 html,body{min-height:100%}
 body{font-family:Inter,system-ui,sans-serif;color:var(--tx);background:
-radial-gradient(900px 500px at 85% -10%,rgba(255,184,0,.22),transparent 60%),
-radial-gradient(800px 600px at 0% 100%,rgba(0,229,255,.18),transparent 60%),var(--bg);position:relative;overflow-x:hidden}
+radial-gradient(900px 500px at 85% -10%,var(--g1),transparent 60%),
+radial-gradient(800px 600px at 0% 100%,var(--g2),transparent 60%),var(--bg);position:relative;overflow-x:hidden}
 body:before{content:"";position:fixed;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:56px 56px;opacity:.12;transform:perspective(600px) rotateX(55deg) scale(2.2) translateY(30%);transform-origin:bottom;pointer-events:none}
 .wrap{position:relative;max-width:1100px;margin:0 auto;padding:18px 14px 40px}
 .badges{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:14px}
@@ -35,14 +38,14 @@ h2{font-family:Orbitron,sans-serif;font-size:17px;margin-bottom:10px;color:var(-
 .row{display:flex;align-items:center;justify-content:space-between;gap:8px}
 .q{display:flex;align-items:center;gap:10px}
 .q button,.btn{cursor:pointer;border:0;font-weight:800;font-family:inherit}
-.q button{width:36px;height:36px;border-radius:50%;background:var(--cy);color:#001;font-size:20px}
+.q button{width:36px;height:36px;border-radius:50%;background:var(--cy);color:var(--onacc);font-size:20px}
 .q span{min-width:34px;text-align:center;font-family:Orbitron,sans-serif;font-size:20px}
 .tog{padding:8px 14px;border-radius:999px;background:transparent;border:1px solid var(--cy);color:var(--cy);cursor:pointer;font-weight:700}
 .tog.on{background:var(--gr);border-color:var(--gr);color:#001}
 .btn{display:block;width:100%;padding:15px;border-radius:12px;background:linear-gradient(90deg,var(--am),#ff8a00);color:#1a0f00;font-size:16px;text-transform:uppercase;letter-spacing:.05em;margin-top:12px;box-shadow:0 0 20px rgba(255,184,0,.4)}
 .btn.ghost{background:transparent;border:1px solid var(--line);color:var(--mu);box-shadow:none;font-size:13px;padding:10px}
 #roof{transition:transform .15s;transform-style:preserve-3d;box-shadow:0 20px 40px rgba(0,0,0,.5),0 0 30px rgba(0,229,255,.18)}
-svg{width:100%;height:auto;display:block;border-radius:12px;background:linear-gradient(#0a1f46,#0b2a5a 60%,#102f55)}
+svg{width:100%;height:auto;display:block;border-radius:12px;background:linear-gradient(var(--sky1),var(--sky2))}
 .eq{list-style:none;padding:0;font-size:13px}
 .eq li{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px dashed rgba(255,255,255,.12)}
 .eq li span:last-child{color:var(--gr);font-weight:700}
@@ -60,21 +63,44 @@ input[type=range]{width:100%;accent-color:var(--cy)}
 @keyframes pl{50%{transform:scale(1.03);filter:brightness(1.25)}}
 .foot{text-align:center;color:var(--mu);font-size:11px;margin-top:18px}
 </style>
+<script>
+/* ============ EDIT THIS BLOCK FOR EACH CLIENT ============ */
+var CFG={
+  preset:'dark',                      // 'dark' | 'light' | 'bold'
+  brand:'Your Solar Company',
+  logo:'',                            // paste a logo image URL, or leave '' to show the brand name
+  headline:'Design Your Own <em>Solar System</em>',
+  subline:"You're in the driver's seat. Build your system, see your savings, and get a custom demonstration. No pressure.",
+  badges:['Local Certified Installers','Low Rates','Top-Tier Equipment'],
+  forms:{s1:'4E4W3EVYIFHoKUXjynmJ', s2:'Ti8PwO1KG6mHZPj5uDaw', s3:'USp8yN7wdaDvfd0Djaxi'},  // GoHighLevel form IDs
+  panelSizes:[430,460], maxPanels:40, maxBatteries:4,
+  options:{battery:true, smart:true, ev:true},
+  rate:0.16,                          // electric rate, $ per kWh
+  prodFactor:1300,                    // kWh produced per kW of panels per year
+  finalNote:'Our solar expert will send you a customized demonstration. All online, no obligation!',
+  consent:'By submitting, you agree to be contacted about solar by call, text or email, including automated messages. Consent is not a condition of purchase. Message and data rates may apply.',
+  disclaimer:'Estimates are for illustration only. Final design and pricing are confirmed in your custom demonstration.',
+  /* design handoff: the form field "Query Key" each value is sent to on the final form. Leave '' to skip a value. */
+  handoff:{panels:'panels',watts:'panel_watts',kw:'system_kw',batteries:'batteries',smart:'smart_panel',ev:'ev_charger',bill:'monthly_bill'}
+};
+/* ========================================================= */
+</script>
 </head>
 <body>
 <div class="wrap">
-  <div class="badges"><span>Local Certified Installers</span><span>Low Rates</span><span>Top-Tier Equipment</span></div>
-  <h1>Design Your Own <em>Solar System</em></h1>
-  <p class="sub">You're in the driver's seat. Build your system, see your savings, and get a custom proposal. No pressure.</p>
+  <div class="brand" id="brand"></div>
+  <div class="badges" id="badges"></div>
+  <h1 id="hl"></h1>
+  <p class="sub" id="subl"></p>
   <div class="prog" id="prog"><i></i><i></i><i></i><i></i><i></i></div>
 
   <!-- STEP 1: screen1 form -->
   <section class="step on" id="s1"><div class="card">
     <h2>Step 1 &middot; Let's Start Your Design</h2>
     <div class="frame">
-<iframe src="https://api.leadconnectorhq.com/widget/form/MKNE9RSWbNZW4QQscfdJ" style="width:100%;min-height:520px;border:none;border-radius:8px" id="inline-MKNE9RSWbNZW4QQscfdJ" data-layout="{'id':'INLINE'}" data-trigger-type="alwaysShow" data-trigger-value="" data-activation-type="alwaysActivated" data-activation-value="" data-deactivation-type="neverDeactivate" data-deactivation-value="" data-form-name="Screen1" data-height="434" data-layout-iframe-id="inline-MKNE9RSWbNZW4QQscfdJ" data-form-id="MKNE9RSWbNZW4QQscfdJ" data-cookie-consent="true" data-cookie-consent-provider="auto" title="Screen1"></iframe>
+<div class="mount" data-k="s1"></div>
     </div>
-    <p class="foot" style="margin:8px 0 0">Form not showing? <a style="color:var(--cy)" target="_blank" rel="noopener" href="https://api.leadconnectorhq.com/widget/form/MKNE9RSWbNZW4QQscfdJ">Open it directly</a></p>
+    <p class="foot" style="margin:8px 0 0" data-open="s1"></p>
     <p class="hint" id="h1">Finished the form? Tap Continue to see your custom design &darr;</p>
     <button class="btn cta" onclick="go(2)">Continue &rarr; See My Custom Design</button>
   </div></section>
@@ -88,12 +114,12 @@ input[type=range]{width:100%;accent-color:var(--cy)}
         <div class="stats"><div><strong id="kw1">0</strong><small>kW SYSTEM</small></div><div><strong id="kwh1">0</strong><small>kWh / YEAR</small></div><div><strong id="pc1">0</strong><small>PANELS</small></div></div>
       </div>
       <div>
-        <div class="ctl"><div class="row"><div><b>Solar Panels</b><small>Add or remove 4 at a time (4&ndash;40)</small><div style="margin-top:6px"><button class="tog wt" onclick="setW(430)">430W</button> <button class="tog wt" onclick="setW(460)">460W</button></div></div>
-          <div class="q"><button onclick="chg('panels',-4,4,40)">&minus;</button><span id="v_panels">8</span><button onclick="chg('panels',4,4,40)">+</button></div></div></div>
-        <div class="ctl"><div class="row"><div><b>Solar Battery Hub</b><small>How many batteries?</small></div>
-          <div class="q"><button onclick="chg('batt',-1,0,4)">&minus;</button><span id="v_batt">1</span><button onclick="chg('batt',1,0,4)">+</button></div></div></div>
-        <div class="ctl"><div class="row"><div><b>Smart Electric Panel</b><small>Optional upgrade</small></div><button class="tog" id="t_smart" onclick="tg('smart')">Add</button></div></div>
-        <div class="ctl"><div class="row"><div><b>EV Charging Station</b><small>Optional</small></div><button class="tog" id="t_ev" onclick="tg('ev')">Add</button></div></div>
+        <div class="ctl"><div class="row"><div><b>Solar Panels</b><small>Add or remove 4 at a time (4&ndash;<span class="maxp"></span>)</small><div class="sizes" style="margin-top:6px"></div></div>
+          <div class="q"><button onclick="pan(-4)">&minus;</button><span id="v_panels">8</span><button onclick="pan(4)">+</button></div></div></div>
+        <div class="ctl opt-batt"><div class="row"><div><b>Solar Battery Hub</b><small>How many batteries?</small></div>
+          <div class="q"><button onclick="bat(-1)">&minus;</button><span id="v_batt">1</span><button onclick="bat(1)">+</button></div></div></div>
+        <div class="ctl opt-smart"><div class="row"><div><b>Smart Electric Panel</b><small>Optional upgrade</small></div><button class="tog" id="t_smart" onclick="tg('smart')">Add</button></div></div>
+        <div class="ctl opt-ev"><div class="row"><div><b>EV Charging Station</b><small>Optional</small></div><button class="tog" id="t_ev" onclick="tg('ev')">Add</button></div></div>
         <h2 style="margin-top:12px">Equipment List</h2><ul class="eq" id="eq1"></ul>
         <button class="btn" onclick="go(3)">I'm done &mdash; Next &rarr;</button>
       </div>
@@ -104,9 +130,9 @@ input[type=range]{width:100%;accent-color:var(--cy)}
   <section class="step" id="s3"><div class="card">
     <h2>Step 3 &middot; Tell Us About Your Energy Bill</h2>
     <div class="frame">
-<iframe src="https://api.leadconnectorhq.com/widget/form/Ti8PwO1KG6mHZPj5uDaw" style="width:100%;min-height:520px;border:none;border-radius:8px" id="inline-Ti8PwO1KG6mHZPj5uDaw" data-layout="{'id':'INLINE'}" data-trigger-type="alwaysShow" data-trigger-value="" data-activation-type="alwaysActivated" data-activation-value="" data-deactivation-type="neverDeactivate" data-deactivation-value="" data-form-name="screen2" data-height="undefined" data-layout-iframe-id="inline-Ti8PwO1KG6mHZPj5uDaw" data-form-id="Ti8PwO1KG6mHZPj5uDaw" data-cookie-consent="true" data-cookie-consent-provider="auto" title="screen2"></iframe>
+<div class="mount" data-k="s2"></div>
     </div>
-    <p class="foot" style="margin:8px 0 0">Form not showing? <a style="color:var(--cy)" target="_blank" rel="noopener" href="https://api.leadconnectorhq.com/widget/form/Ti8PwO1KG6mHZPj5uDaw">Open it directly</a></p>
+    <p class="foot" style="margin:8px 0 0" data-open="s2"></p>
     <p class="hint" id="h3">Finished the form? Tap Continue to see your usage &darr;</p>
     <button class="btn cta" onclick="go(4)">Continue &rarr; See My Usage &amp; Savings</button>
   </div></section>
@@ -122,11 +148,11 @@ input[type=range]{width:100%;accent-color:var(--cy)}
         <p class="sub" style="text-align:left;margin:0" id="msg"></p>
       </div>
       <div>
-        <div class="ctl"><div class="row"><div><b>Solar Panels</b><small>4 at a time</small><div style="margin-top:6px"><button class="tog wt" onclick="setW(430)">430W</button> <button class="tog wt" onclick="setW(460)">460W</button></div></div>
-          <div class="q"><button onclick="chg('panels',-4,4,40)">&minus;</button><span id="v_panels2">8</span><button onclick="chg('panels',4,4,40)">+</button></div></div></div>
-        <div class="ctl"><div class="row"><div><b>Batteries</b></div><div class="q"><button onclick="chg('batt',-1,0,4)">&minus;</button><span id="v_batt2">1</span><button onclick="chg('batt',1,0,4)">+</button></div></div></div>
-        <div class="ctl"><div class="row"><b>Smart Electric Panel</b><button class="tog" id="t_smart2" onclick="tg('smart')">Add</button></div></div>
-        <div class="ctl"><div class="row"><b>EV Charging Station</b><button class="tog" id="t_ev2" onclick="tg('ev')">Add</button></div></div>
+        <div class="ctl"><div class="row"><div><b>Solar Panels</b><small>4 at a time</small><div class="sizes" style="margin-top:6px"></div></div>
+          <div class="q"><button onclick="pan(-4)">&minus;</button><span id="v_panels2">8</span><button onclick="pan(4)">+</button></div></div></div>
+        <div class="ctl opt-batt"><div class="row"><div><b>Batteries</b></div><div class="q"><button onclick="bat(-1)">&minus;</button><span id="v_batt2">1</span><button onclick="bat(1)">+</button></div></div></div>
+        <div class="ctl opt-smart"><div class="row"><b>Smart Electric Panel</b><button class="tog" id="t_smart2" onclick="tg('smart')">Add</button></div></div>
+        <div class="ctl opt-ev"><div class="row"><b>EV Charging Station</b><button class="tog" id="t_ev2" onclick="tg('ev')">Add</button></div></div>
         <ul class="eq" id="eq2"></ul>
         <button class="btn" onclick="go(5)">I love my design &rarr; Get my custom demo</button>
         <button class="btn ghost" onclick="go(2)">&larr; Back to simulator</button>
@@ -138,22 +164,41 @@ input[type=range]{width:100%;accent-color:var(--cy)}
   <section class="step" id="s5"><div class="card">
     <h2>Step 5 &middot; Get Your Custom Demonstration</h2>
     <div class="grid">
-      <div><p class="sub" style="text-align:left;margin:0 0 8px">Our solar expert will send you a customized demonstration. All online, no obligation!</p><ul class="eq" id="eq3"></ul>
+      <div><p class="sub" id="fnote" style="text-align:left;margin:0 0 8px"></p><ul class="eq" id="eq3"></ul>
         <div class="stats"><div><strong id="kw3">0</strong><small>kW SYSTEM</small></div><div><strong id="kwh3">0</strong><small>kWh / YEAR</small></div><div><strong id="pc3">0</strong><small>PANELS</small></div></div>
         <button class="btn ghost" onclick="go(4)">&larr; Edit my design</button></div>
       <div class="frame" style="min-height:560px">
-<iframe src="https://api.leadconnectorhq.com/widget/form/USp8yN7wdaDvfd0Djaxi" style="width:100%;min-height:520px;border:none;border-radius:8px" id="inline-USp8yN7wdaDvfd0Djaxi" data-layout="{'id':'INLINE'}" data-trigger-type="alwaysShow" data-trigger-value="" data-activation-type="alwaysActivated" data-activation-value="" data-deactivation-type="neverDeactivate" data-deactivation-value="" data-form-name="final screen " data-height="undefined" data-layout-iframe-id="inline-USp8yN7wdaDvfd0Djaxi" data-form-id="USp8yN7wdaDvfd0Djaxi" data-cookie-consent="true" data-cookie-consent-provider="auto" title="final screen "></iframe>
-      <p class="foot" style="margin:8px 0 0">Form not showing? <a style="color:var(--cy)" target="_blank" rel="noopener" href="https://api.leadconnectorhq.com/widget/form/USp8yN7wdaDvfd0Djaxi">Open it directly</a></p>
+<div class="mount" data-k="s3"></div>
+      <p class="foot" style="margin:8px 0 0" data-open="s3"></p>
+      <p class="foot" id="consent"></p>
       </div>
     </div>
   </div></section>
 
-  <p class="foot">Estimates are for illustration only. Final design and pricing are confirmed in your custom proposal.</p>
+  <p class="foot" id="disc"></p>
 </div>
+<script>
+(function(){
+  var d=document,$=function(i){return d.getElementById(i)};
+  d.documentElement.setAttribute('data-theme',CFG.preset);
+  d.title=CFG.brand+' | Design Your Solar System';
+  $('brand').innerHTML=CFG.logo?'<img src="'+CFG.logo+'" alt="'+CFG.brand+'" style="max-height:48px">':'<span>'+CFG.brand+'</span>';
+  $('badges').innerHTML=CFG.badges.map(function(b){return '<span>'+b+'</span>'}).join('');
+  $('hl').innerHTML=CFG.headline;$('subl').textContent=CFG.subline;$('fnote').textContent=CFG.finalNote;$('disc').textContent=CFG.disclaimer;$('consent').textContent=CFG.consent;
+  d.querySelectorAll('.maxp').forEach(function(e){e.textContent=CFG.maxPanels});
+  d.querySelectorAll('.sizes').forEach(function(e){e.innerHTML=CFG.panelSizes.map(function(w){return '<button class="tog wt" onclick="setW('+w+')">'+w+'W</button>'}).join(' ')});
+  d.querySelectorAll('.mount').forEach(function(m){var k=m.getAttribute('data-k'),id=CFG.forms[k];
+    m.innerHTML='<iframe src="https://api.leadconnectorhq.com/widget/form/'+id+'" style="width:100%;min-height:520px;border:none;border-radius:8px" id="inline-'+id+'" data-layout="{\'id\':\'INLINE\'}" data-trigger-type="alwaysShow" data-trigger-value="" data-activation-type="alwaysActivated" data-activation-value="" data-deactivation-type="neverDeactivate" data-deactivation-value="" data-form-name="'+k+'" data-height="undefined" data-layout-iframe-id="inline-'+id+'" data-form-id="'+id+'" data-cookie-consent="true" data-cookie-consent-provider="auto" title="'+k+'"></iframe>'});
+  d.querySelectorAll('[data-open]').forEach(function(p){p.innerHTML='Form not showing? <a style="color:var(--cy)" target="_blank" rel="noopener" href="https://api.leadconnectorhq.com/widget/form/'+CFG.forms[p.getAttribute('data-open')]+'">Open it directly</a>'});
+  [['batt','battery'],['smart','smart'],['ev','ev']].forEach(function(o){if(!CFG.options[o[1]])d.querySelectorAll('.opt-'+o[0]).forEach(function(e){e.style.display='none'})});
+})();
+</script>
 <script src="https://link.msgsndr.com/js/form_embed.js"></script>
 <script>
-var S={watt:430,panels:8,batt:1,smart:false,ev:false,bill:200,step:1};
-var RATE=0.16;function kpp(){return S.watt/1000*1300}
+var S={watt:CFG.panelSizes[0],panels:8,batt:CFG.options.battery?1:0,smart:false,ev:false,bill:200,step:1};
+var RATE=CFG.rate;function kpp(){return S.watt/1000*CFG.prodFactor}
+function pan(d){chg('panels',d,4,CFG.maxPanels)}
+function bat(d){chg('batt',d,0,CFG.maxBatteries)}
 function setW(w){S.watt=w;draw()}
 
 var tm=null,built=false;
@@ -168,8 +213,17 @@ function arm(n){
   if(n===2&&!built){built=true;var t=S.panels;S.panels=0;draw();
     [4,8].forEach(function(v,i){setTimeout(function(){if(S.step===2&&S.panels<=v){S.panels=Math.min(v,t);draw()}},500+i*900)});}
 }
+var lastQ='';
+function handoff(){
+  var h=CFG.handoff||{},q=[];
+  function a(k,v){if(h[k])q.push(encodeURIComponent(h[k])+'='+encodeURIComponent(v))}
+  a('panels',S.panels);a('watts',S.watt);a('kw',(S.panels*S.watt/1000).toFixed(2));a('batteries',S.batt);a('smart',S.smart?'Yes':'No');a('ev',S.ev?'Yes':'No');a('bill',S.bill);
+  var qs=q.join('&');if(qs===lastQ)return;lastQ=qs;
+  var f=document.getElementById('inline-'+CFG.forms.s3);
+  if(f)f.src='https://api.leadconnectorhq.com/widget/form/'+CFG.forms.s3+(qs?'?'+qs:'');
+}
 function go(n){
-  S.step=n;arm(n);
+  S.step=n;arm(n);if(n===5)handoff();
   document.querySelectorAll('.step').forEach(function(e,i){e.classList.toggle('on',i+1===n)});
   document.querySelectorAll('#prog i').forEach(function(e,i){e.classList.toggle('on',i<n)});
   draw();window.scrollTo({top:0,behavior:'smooth'});
@@ -179,9 +233,9 @@ function tg(k){S[k]=!S[k];draw()}
 
 function eqHTML(){
   var kw=(S.panels*S.watt/1000).toFixed(2),h='<li><span>'+S.watt+'W Solar Panels &times; '+S.panels+'</span><span>'+kw+' kW</span></li>';
-  h+='<li><span>Solar Battery &times; '+S.batt+'</span><span>'+(S.batt?'Included':'None')+'</span></li>';
-  h+='<li><span>Smart Electric Panel</span><span>'+(S.smart?'Added':'Not added')+'</span></li>';
-  h+='<li><span>EV Charging Station</span><span>'+(S.ev?'Added':'Not added')+'</span></li>';
+  if(CFG.options.battery)h+='<li><span>Solar Battery &times; '+S.batt+'</span><span>'+(S.batt?'Included':'None')+'</span></li>';
+  if(CFG.options.smart)h+='<li><span>Smart Electric Panel</span><span>'+(S.smart?'Added':'Not added')+'</span></li>';
+  if(CFG.options.ev)h+='<li><span>EV Charging Station</span><span>'+(S.ev?'Added':'Not added')+'</span></li>';
   return h;
 }
 
