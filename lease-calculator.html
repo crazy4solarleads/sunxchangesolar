@@ -4,270 +4,882 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Your SunXchange Solar Lease Demonstration</title>
+<title>SunXchange | Final Solar Lease Calculator</title>
+<style>
+:root{
+  --navy:#09243e;
+  --blue:#087cce;
+  --green:#13ad78;
+  --ink:#18344a;
+  --muted:#657a8d;
+  --line:#dce8ef;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:Arial,Helvetica,sans-serif;
+  background:#f2f8fc;
+  color:var(--ink);
+  line-height:1.6;
+}
+header{
+  background:var(--navy);
+  color:white;
+  text-align:center;
+  padding:24px 15px;
+}
+.logo{font-size:29px;font-weight:900}
+.logo span{color:#53e6b4}
+.hero{
+  background:linear-gradient(130deg,#09243e,#116ba5);
+  color:white;
+  padding:52px 20px;
+  text-align:center;
+}
+.hero h1{
+  font-size:clamp(30px,5vw,50px);
+  line-height:1.15;
+  margin:12px auto;
+  max-width:780px;
+}
+.hero p{max-width:690px;margin:15px auto}
+.rate{
+  display:inline-block;
+  font-size:36px;
+  font-weight:900;
+  color:#66f0bf;
+}
+.wrap{max-width:960px;margin:auto;padding:28px 16px}
+.card{
+  background:white;
+  border:1px solid var(--line);
+  border-radius:17px;
+  padding:27px;
+  margin-bottom:22px;
+  box-shadow:0 8px 25px #123b5d0b;
+}
+h2{margin:0 0 12px;font-size:27px}
+h3{margin:0 0 10px}
+p{margin-top:8px}
+.muted{color:var(--muted)}
+.grid2{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:17px;
+}
+.field{margin-bottom:18px}
+.field label{
+  display:block;
+  font-weight:bold;
+  margin-bottom:7px;
+}
+.field input,.field select{
+  width:100%;
+  padding:14px;
+  border:1px solid #bdd0de;
+  border-radius:10px;
+  background:white;
+  color:var(--ink);
+  font:inherit;
+}
+.btn{
+  background:var(--blue);
+  color:white;
+  border:0;
+  border-radius:11px;
+  padding:15px 23px;
+  font-size:16px;
+  font-weight:bold;
+  cursor:pointer;
+}
+.btn.green{background:var(--green);color:#052a1e}
+.btn:disabled{opacity:.6;cursor:wait}
+.upgrades{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+.upgrade{
+  border:2px solid var(--line);
+  border-radius:12px;
+  padding:16px;
+  background:#f8fbfd;
+  cursor:pointer;
+}
+.upgrade:has(input:checked){
+  border-color:var(--green);
+  background:#ebfff5;
+}
+.upgrade input{accent-color:var(--green)}
+.upgrade strong{display:block;margin-top:5px}
+.upgrade small{color:var(--muted)}
+.results{
+  background:linear-gradient(130deg,#09243e,#135782);
+  color:white;
+  padding:28px;
+  border-radius:15px;
+  text-align:center;
+  margin-top:20px;
+}
+.price{
+  font-size:clamp(39px,7vw,65px);
+  line-height:1.2;
+  font-weight:900;
+  color:#69f1bd;
+  margin:12px 0;
+}
+.stats{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+  margin-top:20px;
+}
+.stat{
+  background:#ffffff18;
+  border-radius:10px;
+  padding:12px;
+}
+.stat strong{display:block;font-size:19px}
+.stat small{font-size:12px;color:#d3e7f2}
+.notice{
+  background:#eaf7ff;
+  border-left:4px solid var(--blue);
+  padding:17px;
+  border-radius:5px;
+  margin-top:17px;
+}
+.checklist{
+  list-style:none;
+  padding:0;
+}
+.checklist li{
+  padding:13px;
+  background:#f3f9fc;
+  border-radius:10px;
+  margin-bottom:9px;
+}
+.checklist input{
+  margin-right:10px;
+  accent-color:var(--green);
+}
+.summary{
+  background:#0c2d48;
+  color:white;
+  border-radius:12px;
+  padding:20px;
+  margin:20px 0;
+}
+.summary p{margin:7px 0}
+.fine{font-size:13px;color:var(--muted)}
+footer{
+  background:var(--navy);
+  color:#d5e5ef;
+  text-align:center;
+  padding:30px 20px;
+  font-size:13px;
+}
+@media(max-width:650px){
+  .grid2,.upgrades{grid-template-columns:1fr}
+  .card{padding:19px}
+  .stats{grid-template-columns:1fr}
+}
+</style>
 </head>
+<body>
 
-<body style="margin:0;padding:0;background:#edf4f8;font-family:Arial,Helvetica,sans-serif;color:#173149;">
+<header>
+  <div class="logo">Sun<span>Xchange</span></div>
+  <div>Solar Lease Demonstration & Contract Request</div>
+</header>
 
-<div style="display:none;font-size:1px;color:#edf4f8;line-height:1px;max-height:0;overflow:hidden;">
-See your $0.20/kWh solar lease option with 0% annual increases. Calculate your estimated monthly payment.
-</div>
+<section class="hero">
+  <h1>Get Solar for Less.<br>Lock In Your Monthly Payment.</h1>
+  <div class="rate">$0.20/kWh</div>
+  <p>
+    0% annual escalator. 25-year lease term.
+    No upfront fees under eligible offers.
+  </p>
+  <p>
+    Your solar system. Your estimated payment.
+    One simple path to final contracts.
+  </p>
+</section>
 
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="background:#edf4f8;">
-<tr>
-<td align="center" style="padding:25px 12px;">
+<main class="wrap">
 
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width:620px;background:#ffffff;border-radius:14px;overflow:hidden;">
+<section class="card">
+  <h2>Your Solar Lease Benefits</h2>
+  <div class="grid2">
+    <div>
+      <h3>☀ Predictable Solar Pricing</h3>
+      <p>
+        Explore solar energy at $0.20/kWh with
+        no annual lease-rate increase for 25 years.
+      </p>
+    </div>
+    <div>
+      <h3>⚡ No Upfront Fees</h3>
+      <p>
+        Explore an eligible lease without an
+        upfront solar installation payment.
+      </p>
+    </div>
+    <div>
+      <h3>🏠 Professional Installation</h3>
+      <p>
+        SunnyMac Solar is the proposed installer.
+        Palmetto LightReach provides the lease.
+      </p>
+    </div>
+    <div>
+      <h3>🛡 Long-Term Coverage</h3>
+      <p>
+        Review the production, equipment,
+        workmanship and roof coverage specified
+        in your final lease documents.
+      </p>
+    </div>
+  </div>
+</section>
 
-<!-- HEADER -->
-<tr>
-<td style="background:#09243e;padding:27px 28px;text-align:center;">
-<div style="font-size:29px;font-weight:900;letter-spacing:-1px;color:white;">
-SUN<span style="color:#61e6b5;">XCHANGE</span>
-</div>
-<div style="font-size:12px;letter-spacing:2px;color:#b6d5e6;margin-top:7px;">
-YOUR PERSONAL SOLAR LEASE DEMONSTRATION
-</div>
-</td>
-</tr>
+<section class="card">
+  <h2>Your 3-Step Checklist</h2>
+  <p class="muted">
+    Complete these steps to request your final
+    solar lease documents.
+  </p>
 
-<!-- HERO -->
-<tr>
-<td style="background:#0d395a;padding:45px 28px;text-align:center;">
-<div style="font-size:13px;color:#8ff0c7;font-weight:bold;letter-spacing:1px;">
-A SMARTER WAY TO POWER YOUR HOME
-</div>
+  <ul class="checklist">
+    <li>
+      <label>
+        <input type="checkbox" id="reviewed">
+        <strong>1. Review your solar lease demonstration.</strong>
+      </label>
+    </li>
+    <li>
+      <label>
+        <input type="checkbox" id="calculated" disabled>
+        <strong>2. Calculate your estimated monthly payment.</strong>
+      </label>
+    </li>
+    <li>
+      <label>
+        <input type="checkbox" id="contracts" disabled>
+        <strong>3. Agree and request final contracts.</strong>
+      </label>
+    </li>
+  </ul>
+</section>
 
-<h1 style="font-size:36px;line-height:1.15;color:#ffffff;margin:17px 0;">
-Get Solar for Less.<br>
-Lock In Your Monthly Payment.
-</h1>
+<section class="card" id="calculator">
+  <h2>Calculate Your Solar Lease Payment</h2>
+  <p>
+    Enter the solar system size you selected
+    in your SunXchange design.
+  </p>
 
-<div style="font-size:55px;font-weight:900;color:#70edb9;margin:22px 0 0;">
-$0.20<span style="font-size:21px;">/kWh</span>
-</div>
+  <div class="grid2">
+    <div class="field">
+      <label for="systemSize">Solar System Size *</label>
+      <select id="systemSize"></select>
+    </div>
 
-<p style="color:#d4e7f1;font-size:17px;margin:9px 0;">
-0% Annual Escalator &nbsp; | &nbsp; 25-Year Term
-</p>
+    <div class="field">
+      <label for="battery">Battery Selection</label>
+      <select id="battery">
+        <option value="None" data-kwh="0">
+          No Battery
+        </option>
+        <option value="Enphase 10 kWh" data-kwh="10">
+          Enphase 10 kWh
+        </option>
+        <option value="SolarEdge 5 kWh" data-kwh="5">
+          SolarEdge 5 kWh
+        </option>
+      </select>
+    </div>
 
-<div style="display:inline-block;background:#d9f9ea;color:#075e43;padding:10px 17px;border-radius:25px;font-weight:bold;margin-top:15px;font-size:14px;">
-No Upfront Solar Installation Fees*
-</div>
-</td>
-</tr>
+    <div class="field">
+      <label for="batteryQty">Number of Batteries</label>
+      <select id="batteryQty">
+        <option value="0">0</option>
+        <option value="1">1 Battery</option>
+        <option value="2">2 Batteries</option>
+        <option value="3">3 Batteries</option>
+        <option value="4">4 Batteries</option>
+      </select>
+    </div>
 
-<!-- INTRO -->
-<tr>
-<td style="padding:33px 30px;">
-<h2 style="font-size:25px;margin:0 0 12px;color:#09243e;">
-Your Utility Bill Doesn't Have to Control Your Future.
-</h2>
+    <div class="field">
+      <label>Lease Rate</label>
+      <input value="$0.20/kWh • 0% Escalator" disabled>
+    </div>
+  </div>
 
-<p style="font-size:16px;line-height:1.7;color:#4c6173;">
-Electric utility rates can change over time. With a qualifying solar lease, you can explore a fixed solar energy rate instead of being fully exposed to future utility price changes.
-</p>
+  <h3>Optional Home Improvements</h3>
+  <p class="muted">
+    Select any upgrades you want included
+    in your final proposal.
+  </p>
 
-<p style="font-size:16px;line-height:1.7;color:#4c6173;">
-And here's the best part: <strong>your proposed solar lease rate doesn't increase every year.</strong>
-</p>
-</td>
-</tr>
+  <div class="upgrades">
+    <label class="upgrade">
+      <input type="checkbox" class="upgradeCheck"
+        value="Tree Removal">
+      <strong>🌳 Tree Removal</strong>
+      <small>Request removal of 5–10 trees.</small>
+      <select id="treeCount"
+        aria-label="Number of trees"
+        style="margin-top:10px;padding:9px;width:100%">
+        <option value="5">5 Trees</option>
+        <option value="6">6 Trees</option>
+        <option value="7">7 Trees</option>
+        <option value="8">8 Trees</option>
+        <option value="9">9 Trees</option>
+        <option value="10">10 Trees</option>
+      </select>
+    </label>
 
-<!-- RATE COMPARISON -->
-<tr>
-<td style="padding:0 30px 30px;">
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;">
-<tr>
-<td colspan="2" style="background:#f0f8fd;padding:16px;font-size:20px;font-weight:bold;color:#09243e;">
-What Could Your Energy Cost Look Like?
-</td>
-</tr>
+    <label class="upgrade">
+      <input type="checkbox" class="upgradeCheck"
+        value="Premium Roof Replacement">
+      <strong>🏠 Premium Roof Replacement</strong>
+      <small>
+        Request a premium roof with an available
+        50-year warranty option.
+      </small>
+    </label>
 
-<tr>
-<td style="padding:18px 12px;border-bottom:1px solid #dce7ee;">
-<strong>Traditional Utility</strong><br>
-<span style="font-size:13px;color:#687d8c;">Illustrative rate only</span>
-</td>
-<td align="right" style="padding:18px 12px;border-bottom:1px solid #dce7ee;font-size:23px;font-weight:bold;color:#617487;">
-$0.28/kWh
-</td>
-</tr>
+    <label class="upgrade">
+      <input type="checkbox" class="upgradeCheck"
+        value="Electrical Upgrade">
+      <strong>⚡ Electrical Upgrade</strong>
+      <small>
+        Request a 200A+ service upgrade
+        or smartphone-connected smart panel.
+      </small>
+      <select id="electricalType"
+        aria-label="Electrical upgrade"
+        style="margin-top:10px;padding:9px;width:100%">
+        <option value="200A+ Service">
+          200A+ Electrical Service
+        </option>
+        <option value="Smart Electrical Panel">
+          Smart Electrical Panel
+        </option>
+      </select>
+    </label>
 
-<tr>
-<td style="padding:18px 12px;background:#e9fff4;">
-<strong style="color:#08794e;">SunXchange Solar Lease</strong><br>
-<span style="font-size:13px;color:#397b62;">Proposed solar energy rate</span>
-</td>
-<td align="right" style="padding:18px 12px;background:#e9fff4;font-size:26px;font-weight:900;color:#078456;">
-$0.20/kWh
-</td>
-</tr>
-</table>
+    <label class="upgrade">
+      <input type="checkbox" class="upgradeCheck"
+        value="Critter Guard">
+      <strong>🛡 Critter Guard</strong>
+      <small>
+        Protective mesh to help keep animals
+        from nesting under solar panels.
+      </small>
+    </label>
+  </div>
 
-<p style="font-size:12px;color:#728597;line-height:1.5;margin-top:12px;">
-The $0.28/kWh utility rate is an example, not your verified utility rate. Actual utility rates, savings and remaining utility charges vary by location, usage and solar production.
-</p>
-</td>
-</tr>
+  <p class="fine">
+    Battery storage and home improvements may change
+    the final contracted payment. These additions
+    are not included in the base solar calculation.
+  </p>
 
-<!-- FIXED RATE -->
-<tr>
-<td style="padding:30px;background:#f3faff;text-align:center;">
-<div style="font-size:13px;font-weight:bold;letter-spacing:1px;color:#1474ae;">
-THE POWER OF ZERO
-</div>
-<h2 style="font-size:45px;color:#09243e;margin:9px 0;">
-0% Increase
-</h2>
-<p style="font-size:17px;color:#4b6377;line-height:1.6;margin:10px 0;">
-Your proposed solar energy rate stays at
-<strong>$0.20/kWh for 25 years.</strong>
-</p>
-<p style="font-size:15px;color:#60788b;">
-Your solar rate isn't climbing every year just because the calendar changed.
-</p>
-</td>
-</tr>
+  <button type="button" class="btn"
+    id="calculateBtn">
+    Calculate My Monthly Payment →
+  </button>
 
-<!-- BENEFITS -->
-<tr>
-<td style="padding:34px 30px;">
-<h2 style="font-size:25px;color:#09243e;margin:0 0 20px;">
-Why Homeowners Choose a Solar Lease
-</h2>
+  <div class="results" id="results" hidden>
+    <h3>Your Estimated Monthly Solar Lease</h3>
+    <div class="price" id="monthlyPrice">$0.00</div>
+    <p>Estimated monthly payment • 0% annual escalator</p>
 
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0">
-<tr>
-<td style="padding:12px 0;border-bottom:1px solid #e4edf2;">
-<strong style="color:#087cce;">01 &nbsp; Predictable Payments</strong>
-<div style="font-size:14px;color:#617588;margin-top:5px;">
-A 0% annual escalator helps keep your contracted solar payment predictable.
-</div>
-</td>
-</tr>
-<tr>
-<td style="padding:12px 0;border-bottom:1px solid #e4edf2;">
-<strong style="color:#087cce;">02 &nbsp; No Upfront Solar Installation Fees*</strong>
-<div style="font-size:14px;color:#617588;margin-top:5px;">
-Explore an eligible lease without paying the full cost of the solar installation upfront.
-</div>
-</td>
-</tr>
-<tr>
-<td style="padding:12px 0;border-bottom:1px solid #e4edf2;">
-<strong style="color:#087cce;">03 &nbsp; Long-Term Protection</strong>
-<div style="font-size:14px;color:#617588;margin-top:5px;">
-Review applicable production, equipment and workmanship protections in your final lease agreement.
-</div>
-</td>
-</tr>
-<tr>
-<td style="padding:12px 0;">
-<strong style="color:#087cce;">04 &nbsp; Less Guesswork</strong>
-<div style="font-size:14px;color:#617588;margin-top:5px;">
-See an estimated monthly price before requesting final contract documents.
-</div>
-</td>
-</tr>
-</table>
-</td>
-</tr>
+    <div class="stats">
+      <div class="stat">
+        <strong id="annualProduction">0</strong>
+        <small>Estimated Annual kWh</small>
+      </div>
+      <div class="stat">
+        <strong>25 Years</strong>
+        <small>Lease Term</small>
+      </div>
+      <div class="stat">
+        <strong>0%</strong>
+        <small>Annual Escalator</small>
+      </div>
+    </div>
+  </div>
 
-<!-- COMPANIES -->
-<tr>
-<td style="padding:28px 30px;background:#f3f8fc;">
-<h2 style="font-size:23px;color:#09243e;margin:0 0 15px;">
-Two Companies. One Solar Journey.
-</h2>
+  <div class="notice">
+    <strong>How accurate is your estimate?</strong>
+    <p>
+      We estimate that each 1 kW of solar
+      produces approximately 1,000 kWh per year.
+      Your estimated monthly payment is calculated
+      using that production and a $0.20/kWh lease rate.
+    </p>
+    <p>
+      Your final monthly payment is verified after
+      expected solar production is calculated
+      for your specific roof. Panel arrangement,
+      roof direction and shading may affect production.
+    </p>
+    <p>
+      This provides a useful starting estimate,
+      although the final payment may be higher or lower,
+      particularly if batteries or home improvements
+      are included.
+    </p>
+  </div>
+</section>
 
-<p style="font-size:15px;color:#4c6173;line-height:1.65;">
-<strong>SunnyMac Solar</strong><br>
-Your proposed solar installation partner, serving homeowners across New Jersey, Delaware, Maryland and Pennsylvania.
-</p>
+<section class="card" id="contractRequest">
+  <h2>Agree & Send My Contracts</h2>
+  <p>
+    Finished designing your system?
+    Submit your request for final SunnyMac Solar
+    and Palmetto LightReach lease documents.
+  </p>
 
-<p style="font-size:15px;color:#4c6173;line-height:1.65;">
-<strong>Palmetto LightReach</strong><br>
-Your proposed solar lease provider, responsible for the financing and lease program under the approved agreement.
-</p>
-</td>
-</tr>
+  <div class="summary" id="systemSummary">
+    Calculate your system first to see
+    your completed configuration here.
+  </div>
 
-<!-- PROCESS -->
-<tr>
-<td style="padding:34px 30px;">
-<h2 style="font-size:24px;color:#09243e;margin:0 0 18px;">
-Your Next Steps Are Simple
-</h2>
+  <form id="contractForm"
+    action="https://formspree.io/f/myeewbvp"
+    method="POST">
 
-<p style="font-size:15px;color:#4c6173;line-height:1.7;">
-<strong>1. Review this demonstration.</strong><br>
-Understand the $0.20/kWh solar lease and 0% annual escalator.
-</p>
+    <input type="hidden" name="_subject"
+      value="SunXchange Final Contracts and Agreements">
 
-<p style="font-size:15px;color:#4c6173;line-height:1.7;">
-<strong>2. Calculate your monthly payment.</strong><br>
-Enter your selected solar system size, batteries and optional home upgrades.
-</p>
+    <input type="hidden" name="request_type"
+      value="Final Contracts and Agreements">
 
-<p style="font-size:15px;color:#4c6173;line-height:1.7;">
-<strong>3. Agree &amp; request final contracts.</strong><br>
-Confirm your desired system and submit your request for SunnyMac and Palmetto LightReach documents.
-</p>
+    <input type="hidden" name="lease_provider"
+      value="Palmetto LightReach">
 
-<p style="font-size:15px;color:#4c6173;line-height:1.7;">
-<strong>4. Sign and schedule your site survey.</strong><br>
-After your contracts are signed, you'll receive next-step information and a text to help arrange your site survey. A welcome call or phone verification may also be required.
-</p>
-</td>
-</tr>
+    <input type="hidden" name="installer"
+      value="SunnyMac Solar">
 
-<!-- FINAL CTA -->
-<tr>
-<td style="background:#09243e;padding:42px 28px;text-align:center;">
-<h2 style="color:white;font-size:29px;line-height:1.2;margin:0 0 15px;">
-Ready to See Your Monthly Payment?
-</h2>
+    <input type="hidden" name="lease_rate"
+      value="$0.20 per kWh">
 
-<p style="color:#cfe4ef;font-size:16px;line-height:1.6;margin:0 0 25px;">
-Choose your final system and see your estimated solar lease payment before requesting contracts.
-</p>
+    <input type="hidden" name="annual_escalator"
+      value="0%">
 
-<table role="presentation" align="center" cellpadding="0" cellspacing="0">
-<tr>
-<td bgcolor="#17b77e" style="border-radius:9px;">
-<a href="https://sunxchangesolar.com/lease-calculator.html"
-target="_blank"
-style="display:inline-block;padding:18px 24px;font-size:16px;font-weight:bold;color:#062d20;text-decoration:none;">
-Calculate My Monthly Payment &amp; Request Contracts
-</a>
-</td>
-</tr>
-</table>
+    <input type="hidden" name="lease_term"
+      value="25 years">
 
-<p style="font-size:13px;color:#b9d2df;margin-top:20px;">
-No payment required to request documents.
-</p>
-</td>
-</tr>
+    <input type="hidden" name="system_kw"
+      id="fSystem">
 
-<!-- FOOTER -->
-<tr>
-<td style="padding:25px 28px;text-align:center;background:#e9f1f6;">
-<div style="font-weight:900;color:#09243e;font-size:21px;">
-SUN<span style="color:#0b9e75;">XCHANGE</span>
-</div>
+    <input type="hidden" name="estimated_annual_kwh"
+      id="fProduction">
 
-<p style="font-size:12px;color:#657a8d;line-height:1.6;">
-*Proposed $0.20/kWh rate, 0% escalator and no-upfront-fee offer are subject to eligibility and final written agreements. Monthly estimates depend on actual solar production and may change with selected upgrades. Utility charges may remain. Final pricing, financing approval, coverage and installation details are governed by signed documents.
-</p>
-</td>
-</tr>
+    <input type="hidden" name="estimated_monthly_payment"
+      id="fMonthly">
 
-</table>
-</td>
-</tr>
-</table>
+    <input type="hidden" name="battery"
+      id="fBattery">
+
+    <input type="hidden" name="battery_quantity"
+      id="fBatteryQty">
+
+    <input type="hidden" name="selected_upgrades"
+      id="fUpgrades">
+
+    <input type="hidden" name="review_confirmed"
+      id="fReviewed">
+
+    <div class="grid2">
+      <div class="field">
+        <label for="firstName">First Name *</label>
+        <input id="firstName"
+          name="first_name"
+          autocomplete="given-name"
+          required>
+      </div>
+
+      <div class="field">
+        <label for="phone">Phone Number *</label>
+        <input id="phone"
+          name="phone"
+          type="tel"
+          autocomplete="tel"
+          required>
+      </div>
+
+      <div class="field">
+        <label for="utility">Electric Utility *</label>
+        <input id="utility"
+          name="utility_company"
+          placeholder="PSE&G, ACE, JCP&L..."
+          required>
+      </div>
+
+      <div class="field">
+        <label for="bill">Monthly Electric Bill (Optional)</label>
+        <input id="bill"
+          name="monthly_electric_bill"
+          type="number"
+          min="0"
+          placeholder="225">
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="requestOption">Document Request *</label>
+      <select id="requestOption"
+        name="document_request"
+        required>
+        <option value="">
+          Select request
+        </option>
+        <option value="Final Contracts and Agreements">
+          Final Contracts and Agreements
+        </option>
+      </select>
+    </div>
+
+    <label style="display:flex;gap:10px;align-items:flex-start;margin:20px 0">
+      <input type="checkbox" id="agree"
+        name="agreement_to_request_documents"
+        value="Yes" required
+        style="margin-top:6px">
+      <span>
+        I have reviewed my lease demonstration
+        and calculated estimate. I agree to submit
+        my selected system for preparation of
+        final contracts and agreements.
+        I understand the final payment and
+        eligibility are subject to the
+        actual lease offer and approval.
+      </span>
+    </label>
+
+    <button type="submit"
+      class="btn green"
+      id="submitBtn">
+      Agree & Send Contracts →
+    </button>
+
+    <p id="formStatus"
+      role="status"
+      aria-live="polite"></p>
+  </form>
+</section>
+
+<section class="card">
+  <h2>What Happens Next?</h2>
+
+  <div class="grid2">
+    <div>
+      <h3>1. Receive Your Documents</h3>
+      <p>
+        Your request is reviewed and matched
+        with your selected system. SunnyMac
+        and Palmetto LightReach contract
+        documents are then prepared and sent
+        to you for review and signing.
+      </p>
+    </div>
+
+    <div>
+      <h3>2. Financing Approval</h3>
+      <p>
+        Final LightReach lease approval may
+        involve a soft credit check and
+        additional eligibility verification.
+      </p>
+    </div>
+
+    <div>
+      <h3>3. Sign & Confirm</h3>
+      <p>
+        Once the contracts are signed,
+        you'll receive confirmation of
+        your system and upcoming steps.
+        A welcome call or phone verification
+        may also be required.
+      </p>
+    </div>
+
+    <div>
+      <h3>4. Schedule Your Site Survey</h3>
+      <p>
+        Shortly after signing, expect a text
+        message with instructions to arrange
+        your site survey appointment.
+      </p>
+    </div>
+  </div>
+
+  <div class="notice">
+    <strong>You're in control.</strong>
+    Your contract request is the next step
+    toward going solar. You can review the
+    actual documents before deciding whether
+    to sign.
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <strong>SunXchange Solar Marketplace</strong>
+  <p>
+    $0.20/kWh and 0% escalator are proposed terms,
+    not a binding offer. Estimated payments use
+    1,000 kWh per kW annually and exclude optional
+    upgrade adjustments. Final system production,
+    pricing, eligibility, warranty coverage and
+    contract terms are determined by the approved
+    SunnyMac / Palmetto LightReach documents.
+  </p>
+</footer>
+
+<script>
+(function(){
+
+const $ = id => document.getElementById(id);
+const size = $("systemSize");
+
+let currentEstimate = null;
+let submitted = false;
+
+// System sizes from 4 kW through 30 kW.
+for(let kw=4;kw<=30;kw++){
+  const option=document.createElement("option");
+  option.value=kw;
+  option.textContent=kw+" kW";
+  if(kw===8)option.selected=true;
+  size.appendChild(option);
+}
+
+function updateBattery(){
+  const qty=$("batteryQty");
+  if($("battery").value==="None"){
+    qty.value="0";
+    qty.disabled=true;
+  }else{
+    qty.disabled=false;
+    if(qty.value==="0")qty.value="1";
+  }
+}
+
+function getUpgrades(){
+  const upgrades=[];
+  document.querySelectorAll(".upgradeCheck:checked")
+  .forEach(item=>{
+    let text=item.value;
+
+    if(text==="Tree Removal"){
+      text+=" ("+$("treeCount").value+" trees)";
+    }
+
+    if(text==="Electrical Upgrade"){
+      text+=" ("+$("electricalType").value+")";
+    }
+
+    upgrades.push(text);
+  });
+
+  return upgrades;
+}
+
+function invalidateEstimate(){
+  currentEstimate=null;
+  submitted=false;
+  $("results").hidden=true;
+  $("calculated").checked=false;
+  $("contracts").checked=false;
+  $("systemSummary").textContent=
+    "Your selections have changed. Recalculate to update your estimate.";
+  $("submitBtn").disabled=false;
+  $("submitBtn").textContent="Agree & Send Contracts →";
+  $("formStatus").textContent="";
+}
+
+function calculate(){
+
+  updateBattery();
+
+  const kw=Number(size.value);
+
+  // Assumption: 1 kW produces 1,000 kWh annually.
+  const annualKwh=kw*1000;
+
+  // $0.20 per estimated annual kWh,
+  // divided into 12 equal monthly payments.
+  const monthly=(annualKwh*.20)/12;
+
+  const battery=$("battery").value;
+  const qty=Number($("batteryQty").value);
+  const upgrades=getUpgrades();
+
+  currentEstimate={
+    kw,
+    annualKwh,
+    monthly,
+    battery,
+    qty,
+    upgrades
+  };
+
+  $("monthlyPrice").textContent=
+    monthly.toLocaleString("en-US",{
+      style:"currency",
+      currency:"USD"
+    });
+
+  $("annualProduction").textContent=
+    annualKwh.toLocaleString("en-US")+" kWh";
+
+  $("results").hidden=false;
+  $("calculated").checked=true;
+
+  const summary=[
+    "Solar System: "+kw+" kW",
+    "Estimated Annual Production: "+
+      annualKwh.toLocaleString()+" kWh",
+    "Estimated Monthly Lease: $"+
+      monthly.toFixed(2),
+    "Lease Rate: $0.20/kWh",
+    "Annual Escalator: 0%",
+    "Lease Term: 25 Years",
+    "Battery: "+(qty
+      ?qty+" × "+battery
+      :"None"),
+    "Upgrades: "+(
+      upgrades.length
+      ?upgrades.join(", ")
+      :"None"
+    )
+  ];
+
+  const box=$("systemSummary");
+  box.replaceChildren();
+
+  const title=document.createElement("h3");
+  title.textContent="Your Selected Solar Package";
+  box.appendChild(title);
+
+  summary.forEach(line=>{
+    const p=document.createElement("p");
+    p.textContent=line;
+    box.appendChild(p);
+  });
+
+  $("fSystem").value=kw;
+  $("fProduction").value=annualKwh;
+  $("fMonthly").value=monthly.toFixed(2);
+  $("fBattery").value=battery;
+  $("fBatteryQty").value=qty;
+  $("fUpgrades").value=
+    upgrades.length?upgrades.join(", "):"None";
+
+  $("results").scrollIntoView({
+    behavior:"smooth",
+    block:"center"
+  });
+}
+
+$("battery").addEventListener("change",()=>{
+  updateBattery();
+  invalidateEstimate();
+});
+
+["systemSize","batteryQty","treeCount","electricalType"]
+.forEach(id=>{
+  $(id).addEventListener("change",invalidateEstimate);
+});
+
+document.querySelectorAll(".upgradeCheck")
+.forEach(item=>{
+  item.addEventListener("change",invalidateEstimate);
+});
+
+$("calculateBtn").addEventListener("click",calculate);
+
+$("contractForm").addEventListener("submit",async event=>{
+
+  event.preventDefault();
+
+  if(submitted)return;
+
+  const status=$("formStatus");
+  const button=$("submitBtn");
+
+  if(!currentEstimate){
+    status.style.color="#b42332";
+    status.textContent=
+      "Please calculate your monthly payment first.";
+    $("calculator").scrollIntoView({behavior:"smooth"});
+    return;
+  }
+
+  if(!$("reviewed").checked){
+    status.style.color="#b42332";
+    status.textContent=
+      "Please confirm that you reviewed the lease demo.";
+    return;
+  }
+
+  if(!event.target.reportValidity())return;
+
+  $("fReviewed").value="Yes";
+
+  button.disabled=true;
+  status.style.color="#087cce";
+  status.textContent="Submitting your contract request...";
+
+  try{
+
+    const response=await fetch(event.target.action,{
+      method:"POST",
+      body:new FormData(event.target),
+      headers:{
+        "Accept":"application/json"
+      }
+    });
+
+    if(!response.ok){
+      throw new Error("Form submission failed");
+    }
+
+    submitted=true;
+    $("contracts").checked=true;
+
+    button.textContent="Request Submitted ✓";
+
+    status.style.color="#087b54";
+    status.textContent=
+      "Your final contract request has been submitted. "+
+      "Your selected system and estimated payment "+
+      "were included. Watch for follow-up about "+
+      "your documents and next steps.";
+
+  }catch(error){
+
+    button.disabled=false;
+    status.style.color="#b42332";
+    status.textContent=
+      "Your submission could not be confirmed. "+
+      "Please try again.";
+
+  }
+
+});
+
+updateBattery();
+
+})();
+</script>
 
 </body>
 </html>
