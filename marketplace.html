@@ -1,0 +1,506 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SunXchange | Build Your Solar Package</title>
+<style>
+:root {
+  --navy:#101e35;
+  --blue:#126eae;
+  --light:#edf5fb;
+  --green:#12a875;
+  --text:#17263b;
+  --muted:#617287;
+}
+* {box-sizing:border-box}
+body {
+  margin:0;
+  background:#f4f7fb;
+  color:var(--text);
+  font-family:Arial,Helvetica,sans-serif;
+}
+header {
+  background:var(--navy);
+  color:white;
+  padding:18px 6%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+}
+.logo {font-size:25px;font-weight:800}
+.logo span {color:#58d8ac}
+header a {color:white;text-decoration:none;font-size:14px}
+.hero {
+  background:linear-gradient(135deg,#101e35,#164d78);
+  color:white;
+  text-align:center;
+  padding:65px 20px;
+}
+.hero h1 {font-size:clamp(32px,5vw,52px);margin:0 0 15px}
+.hero p {font-size:18px;max-width:680px;margin:0 auto;line-height:1.7}
+.wrap {max-width:1120px;margin:auto;padding:28px 16px}
+.card {
+  background:white;
+  border:1px solid #dfe8f0;
+  border-radius:16px;
+  padding:25px;
+  margin-bottom:20px;
+  box-shadow:0 5px 20px #12263b08;
+}
+h2 {margin-top:0;font-size:25px}
+h3 {margin-bottom:8px}
+p {line-height:1.65}
+.muted {color:var(--muted)}
+.grid {display:grid;grid-template-columns:1fr 1fr;gap:20px}
+label {display:block;font-weight:700;margin-bottom:9px}
+select {
+  width:100%;
+  padding:15px;
+  border:1px solid #cad7e4;
+  border-radius:10px;
+  background:white;
+  font-size:16px;
+  color:var(--text);
+}
+.preview {
+  background:linear-gradient(160deg,#eaf5fc,#f8fbff);
+  border-radius:14px;
+  padding:25px;
+  text-align:center;
+}
+.panel-grid {
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:5px;
+  max-width:390px;
+  margin:20px auto;
+}
+.panel {
+  height:40px;
+  background:linear-gradient(135deg,#0c294b,#16598a);
+  border:2px solid #a4c2d6;
+  border-radius:3px;
+  position:relative;
+}
+.panel:after {
+  content:"";
+  position:absolute;
+  left:50%;
+  top:0;
+  bottom:0;
+  border-left:1px solid #4d83ac;
+}
+.stats {display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.stat {
+  background:#f0f6fb;
+  border-radius:10px;
+  padding:15px;
+  text-align:center;
+}
+.stat strong {display:block;font-size:24px;color:var(--blue)}
+.stat small {color:var(--muted)}
+.btn {
+  display:inline-block;
+  background:var(--blue);
+  color:white;
+  text-decoration:none;
+  padding:17px 28px;
+  border:0;
+  border-radius:10px;
+  font-size:17px;
+  font-weight:bold;
+  cursor:pointer;
+}
+.btn:hover {background:#09568b}
+.btn-green {background:var(--green)}
+.btn-green:hover {background:#098a60}
+.steps {display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.step {
+  background:#f1f6fb;
+  border-radius:12px;
+  padding:18px;
+}
+.step b {
+  display:inline-block;
+  background:var(--blue);
+  color:white;
+  padding:8px 12px;
+  border-radius:8px;
+  margin-bottom:10px;
+}
+.badge {
+  display:inline-block;
+  background:#dff8ed;
+  color:#087c54;
+  padding:7px 12px;
+  border-radius:20px;
+  font-size:13px;
+  font-weight:bold;
+}
+.summary {
+  background:#101e35;
+  color:white;
+  padding:25px;
+  border-radius:14px;
+}
+.summary p {margin:9px 0}
+footer {
+  background:#101e35;
+  color:white;
+  text-align:center;
+  padding:28px 15px;
+}
+iframe {width:100%;max-width:700px;height:550px;border:0}
+@media(max-width:700px){
+  .grid,.steps {grid-template-columns:1fr}
+  .stats {grid-template-columns:1fr 1fr}
+  .card {padding:18px}
+  .panel {height:30px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">Sun<span>Xchange</span></div>
+  <a href="#roof">Free Roof Offer</a>
+</header>
+
+<section class="hero">
+  <span class="badge">YOUR SOLAR. YOUR CHOICE.</span>
+  <h1>Choose Your Solar System.</h1>
+  <p>
+    Build your solar package online.
+    Select your system size, inverter technology,
+    and battery storage. Then request your
+    personalized purchase or lease proposal.
+    No sales appointment required to get started.
+  </p>
+  <p style="margin-top:20px">
+    <a class="btn btn-green" href="#builder">Build My Package ↓</a>
+  </p>
+</section>
+
+<main class="wrap">
+
+<section class="card" id="builder">
+<h2>1. Choose Your Solar System</h2>
+<p class="muted">
+  All packages feature Hanwha Qcells 430W solar panels.
+  Panel quantities are calculated automatically.
+</p>
+
+<div class="grid">
+<div>
+  <label for="systemSize">Solar System Size</label>
+  <select id="systemSize">
+    <option value="4">4 kW — Starter Home</option>
+    <option value="5">5 kW — Small Home</option>
+    <option value="6">6 kW — Everyday Home</option>
+    <option value="7">7 kW — Growing Household</option>
+    <option value="8" selected>8 kW — Popular Choice</option>
+    <option value="9">9 kW — High Usage</option>
+    <option value="10">10 kW — Large Home</option>
+    <option value="11">11 kW</option>
+    <option value="12">12 kW — High Energy</option>
+    <option value="13">13 kW</option>
+    <option value="14">14 kW</option>
+    <option value="15">15 kW — Large Property</option>
+    <option value="16">16 kW</option>
+    <option value="17">17 kW</option>
+    <option value="18">18 kW</option>
+    <option value="19">19 kW</option>
+    <option value="20">20 kW — Maximum Package</option>
+  </select>
+
+  <p class="muted">
+    Actual installed capacity depends on the final
+    number of panels and available roof space.
+  </p>
+</div>
+
+<div class="preview">
+  <h3 id="previewTitle">Your Solar Package</h3>
+  <div class="panel-grid" id="panelGrid"></div>
+  <strong id="panelDescription"></strong>
+  <p class="muted">Illustrative panel layout, not a roof design.</p>
+</div>
+</div>
+</section>
+
+<section class="card">
+<h2>2. Choose Your Inverter</h2>
+<p class="muted">
+  Select how your solar panels convert sunlight
+  into usable electricity.
+</p>
+
+<label for="inverter">Inverter Technology</label>
+<select id="inverter">
+  <option value="String Inverter with Power Optimizers">
+    String Inverter + Power Optimizers
+  </option>
+  <option value="Microinverters">
+    Microinverters
+  </option>
+</select>
+
+<div class="grid" style="margin-top:20px">
+<div class="step">
+<h3>String + Optimizers</h3>
+<p>
+  A central inverter works with panel-level
+  power optimizers to help manage individual
+  panel performance.
+</p>
+</div>
+<div class="step">
+<h3>Microinverters</h3>
+<p>
+  Each panel has its own inverter, allowing
+  panel-level conversion and monitoring
+  with compatible equipment.
+</p>
+</div>
+</div>
+</section>
+
+<section class="card">
+<h2>3. Add Battery Backup</h2>
+<p class="muted">
+  Add energy storage to your solar package.
+  Backup capability depends on the selected
+  equipment and system configuration.
+</p>
+
+<div class="grid">
+<div>
+<label for="battery">Battery Selection</label>
+<select id="battery">
+  <option value="None">No Battery</option>
+  <option value="Enphase 10 kWh">Enphase 10 kWh</option>
+  <option value="SolarEdge 5 kWh">SolarEdge 5 kWh</option>
+</select>
+</div>
+<div>
+<label for="batteryQty">Battery Quantity</label>
+<select id="batteryQty">
+  <option value="0">0 Batteries</option>
+  <option value="1">1 Battery</option>
+  <option value="2">2 Batteries</option>
+  <option value="3">3 Batteries</option>
+  <option value="4">4 Batteries</option>
+</select>
+</div>
+</div>
+
+<p class="muted">
+  Battery and inverter compatibility will be
+  verified during engineering. Equipment names
+  represent requested product categories;
+  exact models are subject to availability.
+</p>
+</section>
+
+<section class="card">
+<h2>Your Solar Package Preview</h2>
+<div class="stats">
+  <div class="stat">
+    <strong id="actualKw">—</strong>
+    <small>Actual Panel Capacity</small>
+  </div>
+  <div class="stat">
+    <strong id="panelCount">—</strong>
+    <small>430W Solar Panels</small>
+  </div>
+  <div class="stat">
+    <strong id="storageTotal">0 kWh</strong>
+    <small>Nominal Battery Storage</small>
+  </div>
+</div>
+
+<div class="summary" style="margin-top:20px">
+  <h3>Selected Equipment</h3>
+  <p id="sumSize"></p>
+  <p id="sumPanels"></p>
+  <p id="sumInverter"></p>
+  <p id="sumBattery"></p>
+</div>
+
+<div style="text-align:center;margin-top:25px">
+  <button class="btn btn-green" onclick="goToCheckout()">
+    Continue to Checkout →
+  </button>
+  <p class="muted">
+    Request one customized purchase or lease demo.
+    No payment is collected on this page.
+  </p>
+</div>
+</section>
+
+<section class="card">
+<h2>What Happens After Checkout?</h2>
+<div class="steps">
+<div class="step">
+<b>01</b>
+<h3>Request</h3>
+<p>Submit your system and property information.</p>
+</div>
+<div class="step">
+<b>02</b>
+<h3>Review</h3>
+<p>Receive a customized proposal and applicable documents.</p>
+</div>
+<div class="step">
+<b>03</b>
+<h3>Site Survey</h3>
+<p>Confirm roof conditions and equipment placement.</p>
+</div>
+<div class="step">
+<b>04</b>
+<h3>Installation</h3>
+<p>Engineering, permits, installation, inspections and activation.</p>
+</div>
+</div>
+</section>
+
+<section class="card">
+<h2>Equipment, Warranties & Support</h2>
+<p>
+  Your personalized document package will include
+  available manufacturer warranty information,
+  installation company details, project milestones,
+  applicable workmanship coverage, and the terms
+  of your chosen purchase or lease option.
+</p>
+<p>
+  Final warranty terms depend on the actual equipment,
+  installer and signed agreement.
+</p>
+</section>
+
+<section class="card" id="roof">
+<span class="badge">SPECIAL ROOF OFFER</span>
+<h2>Explore a Free Roof With Solar</h2>
+<p>
+  Need a new roof before installing solar?
+  Submit the form below to check eligibility
+  for an available roof-and-solar promotion.
+  Offer subject to eligibility, written terms
+  and installation partner approval.
+</p>
+
+<iframe
+  title="Roof and Solar Offer"
+  src="https://docs.google.com/forms/d/e/1FAIpQLSc5BK5x-n91rqz2HLt32bo2qCPvOQotMAPHjGOXf7FInZFJhA/viewform?embedded=true"
+  loading="lazy">
+  Loading…
+</iframe>
+
+<p>
+<a target="_blank" rel="noopener"
+href="https://docs.google.com/forms/d/e/1FAIpQLSc5BK5x-n91rqz2HLt32bo2qCPvOQotMAPHjGOXf7FInZFJhA/viewform">
+Open Roof Request Form
+</a>
+</p>
+</section>
+
+</main>
+
+<footer>
+<h3>SunXchange</h3>
+<p>Choose your system. Request your demo. Start your solar journey.</p>
+<p>Final pricing, equipment and eligibility are subject to review.</p>
+</footer>
+
+<script>
+const $=id=>document.getElementById(id);
+
+function updatePackage(){
+  const requestedKw=Number($("systemSize").value);
+  const count=Math.ceil(requestedKw*1000/430);
+  const actualKw=count*430/1000;
+  const inverter=$("inverter").value;
+  const battery=$("battery").value;
+
+  if(battery==="None"){
+    $("batteryQty").value="0";
+    $("batteryQty").disabled=true;
+  }else{
+    $("batteryQty").disabled=false;
+    if(Number($("batteryQty").value)===0){
+      $("batteryQty").value="1";
+    }
+  }
+
+  const qty=Number($("batteryQty").value);
+  const perBattery=battery.includes("10 kWh")?10:
+                   battery.includes("5 kWh")?5:0;
+  const storage=qty*perBattery;
+
+  $("actualKw").textContent=actualKw.toFixed(2)+" kW";
+  $("panelCount").textContent=count;
+  $("storageTotal").textContent=storage+" kWh";
+
+  $("previewTitle").textContent=requestedKw+" kW Solar Package";
+  $("panelDescription").textContent=count+" Qcells 430W Panels";
+
+  $("sumSize").textContent="System: "+actualKw.toFixed(2)+" kW";
+  $("sumPanels").textContent="Panels: "+count+" × Hanwha Qcells 430W";
+  $("sumInverter").textContent="Inverter: "+inverter;
+  $("sumBattery").textContent="Battery: "+(qty?qty+" × "+battery:"None");
+
+  const grid=$("panelGrid");
+  grid.replaceChildren();
+  for(let i=0;i<count;i++){
+    const panel=document.createElement("div");
+    panel.className="panel";
+    grid.appendChild(panel);
+  }
+}
+
+function goToCheckout(){
+  const requestedKw=Number($("systemSize").value);
+  const count=Math.ceil(requestedKw*1000/430);
+  const actualKw=count*430/1000;
+  const inverter=$("inverter").value;
+  const battery=$("battery").value;
+  const qty=Number($("batteryQty").value);
+  const batteryText=qty?qty+" × "+battery:"None";
+
+  const params=new URLSearchParams({
+    size:actualKw.toFixed(2),
+    panels:String(count),
+    inverter:inverter,
+    battery:batteryText
+  });
+
+  const selection={
+    size:actualKw.toFixed(2),
+    panels:String(count),
+    inverter:inverter,
+    battery:batteryText
+  };
+
+  try{
+    localStorage.setItem(
+      "sunxchangeSelection",
+      JSON.stringify(selection)
+    );
+  }catch(e){}
+
+  window.location.href="checkout.html?"+params.toString();
+}
+
+["systemSize","inverter","battery","batteryQty"]
+.forEach(id=>{
+  $(id).addEventListener("change",updatePackage);
+});
+
+updatePackage();
+</script>
+</body>
+</html>
