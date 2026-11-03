@@ -1,0 +1,519 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sell Your Own Solar | Expert Independent Sales Guide</title>
+<meta name="description" content="Learn to generate your own solar leads, book appointments, handle objections and build your independent sales pipeline. Digital guide for $19.">
+<style>
+:root{
+  --navy:#09162b;
+  --navy2:#132c4b;
+  --gold:#ffbf47;
+  --teal:#0d999a;
+  --ink:#12243a;
+  --muted:#64748b;
+  --light:#f4f7fb;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif;
+  color:var(--ink);background:#fff;line-height:1.65;
+}
+a{text-decoration:none;color:inherit}
+.container{width:min(1100px,92%);margin:auto}
+.top{
+  background:#071123;color:#fff;text-align:center;
+  padding:9px;font-size:13px;letter-spacing:1px;
+}
+.top strong{color:var(--gold)}
+nav{
+  background:var(--navy);color:white;padding:18px 0;
+  position:sticky;top:0;z-index:20;
+  border-bottom:1px solid #ffffff20;
+}
+.navrow{display:flex;justify-content:space-between;align-items:center;gap:15px}
+.brand{font-weight:900;font-size:19px;letter-spacing:-.5px}
+.navlinks{display:flex;gap:20px;align-items:center;font-size:14px}
+.btn{
+  display:inline-block;background:var(--gold);color:#12243a;
+  border:0;border-radius:11px;padding:15px 24px;
+  font-weight:800;cursor:pointer;text-align:center;
+  transition:transform .2s,background .2s;
+}
+.btn:hover{transform:translateY(-2px);background:#ffd47f}
+.btn-outline{background:transparent;color:white;border:1px solid #ffffff70}
+.btn-outline:hover{background:#ffffff15}
+.btn-small{padding:10px 16px}
+.hero{
+  background:radial-gradient(circle at 85% 30%,#24496b,var(--navy) 70%);
+  color:#fff;padding:90px 0;
+}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:45px;align-items:center}
+.eyebrow{color:var(--gold);text-transform:uppercase;letter-spacing:2px;font-size:12px;font-weight:900}
+h1{font-size:clamp(42px,6vw,76px);line-height:1.08;letter-spacing:-3px;margin:20px 0}
+h1 span{color:var(--gold)}
+.hero p{font-size:18px;color:#d2e0ef;max-width:570px}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin:28px 0}
+.proof{color:#cad9ec;font-size:13px}
+.book{
+  margin:auto;max-width:340px;min-height:420px;padding:35px 25px;
+  background:linear-gradient(135deg,#163553,#071426);
+  border:3px solid #b99343;border-radius:7px;
+  box-shadow:25px 30px 45px #0008;
+  transform:rotate(-4deg);
+  display:flex;flex-direction:column;justify-content:space-between;
+  text-align:center;
+}
+.sun{font-size:75px;color:var(--gold);line-height:1}
+.book h2{font-size:43px;line-height:1.05;color:white;letter-spacing:-1px}
+.book p{font-size:14px;color:#e0c78d}
+.book .price{font-size:38px;color:var(--gold);font-weight:900}
+.stats{background:#fff;border-bottom:1px solid #e3e9ef}
+.statgrid{display:grid;grid-template-columns:repeat(4,1fr)}
+.stat{text-align:center;padding:25px 10px;border-right:1px solid #e3e9ef}
+.stat:last-child{border:0}
+.stat strong{display:block;font-size:24px}
+.stat small{color:var(--muted)}
+section{padding:80px 0}
+.heading{text-align:center;max-width:750px;margin:0 auto 38px}
+.heading h2{font-size:clamp(30px,4vw,48px);line-height:1.15;letter-spacing:-1.5px;margin:10px 0}
+.heading p{color:var(--muted)}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{padding:29px;background:white;border:1px solid #e0e7ef;border-radius:18px;box-shadow:0 7px 24px #12345608}
+.card .ico{font-size:35px;color:var(--teal)}
+.card h3{line-height:1.35}
+.card p{color:var(--muted);font-size:15px}
+.soft{background:var(--light)}
+.dark{background:var(--navy);color:white}
+.dark .heading p{color:#bdcce0}
+.chaptergrid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+.chapter{border:1px solid #ffffff30;background:#ffffff09;padding:23px;border-radius:14px}
+.chapter .number{color:var(--gold);font-size:12px;font-weight:900;letter-spacing:1px}
+.chapter h3{font-size:17px;line-height:1.35}
+.chapter p{font-size:14px;color:#c1cee0}
+.preview{
+  max-width:820px;margin:auto;background:white;border:1px solid #e2e9f0;
+  border-radius:20px;overflow:hidden;box-shadow:0 15px 40px #12345618;
+}
+.tabs{display:grid;grid-template-columns:repeat(4,1fr);background:#eaf0f6;padding:7px;gap:5px}
+.tab{border:0;padding:14px 5px;cursor:pointer;background:transparent;border-radius:9px;font-weight:700;color:#51647a}
+.tab.active{background:white;color:var(--ink)}
+.sample{padding:34px;min-height:260px}
+.sample h3{color:var(--teal);font-size:13px;text-transform:uppercase;letter-spacing:1px}
+.sample blockquote{font-size:22px;line-height:1.6;font-weight:550;margin:22px 0}
+.sample p{color:var(--muted);font-size:14px}
+.funnel{background:linear-gradient(130deg,#142f50,#08152a);color:white}
+.funnelgrid{display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:center}
+.funnel h2{font-size:clamp(30px,4vw,46px);line-height:1.12;letter-spacing:-1px}
+.funnel p{color:#c4d4e6}
+.funnel ul{padding-left:20px;color:#dce8f3}
+.funnel li{margin:9px 0}
+.bigprice{font-size:56px;font-weight:900;color:var(--gold)}
+.formcard{background:white;color:var(--ink);border-radius:20px;padding:30px;box-shadow:0 20px 50px #0002}
+.formcard h3{font-size:25px;margin:0 0 8px}
+.formcard .note{color:var(--muted);font-size:14px}
+.field{margin:17px 0}
+.field label{display:block;font-weight:700;font-size:14px;margin-bottom:7px}
+.field input{
+  display:block;width:100%;border:1px solid #cbd5e1;border-radius:10px;
+  padding:14px;font-size:16px;background:white;color:var(--ink);
+}
+.field input:focus{outline:2px solid var(--teal);border-color:var(--teal)}
+.consent{display:flex;align-items:flex-start;gap:9px;font-size:12px;color:#526479;margin:17px 0}
+.consent input{margin-top:4px;flex-shrink:0}
+.submit{width:100%;font-size:16px}
+.status{font-size:14px;margin-top:13px;display:none;border-radius:9px;padding:12px}
+.status.success{display:block;background:#e5f8ef;color:#126a44}
+.status.error{display:block;background:#fff0ed;color:#9b3025}
+.safe{font-size:12px;text-align:center;color:var(--muted);margin-top:13px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.step{background:white;border:1px solid #e0e7ef;border-radius:17px;padding:25px}
+.step strong{color:var(--teal);font-size:13px}
+.step h3{margin-bottom:7px}
+.step p{font-size:14px;color:var(--muted)}
+.faq{max-width:780px;margin:auto}
+details{padding:19px 0;border-bottom:1px solid #e2e8f0}
+summary{cursor:pointer;font-weight:750}
+details p{color:var(--muted)}
+footer{background:#071123;color:#abbdd1;text-align:center;padding:32px 20px;font-size:13px}
+footer strong{color:white}
+@media(max-width:850px){
+  .hero-grid,.funnelgrid{grid-template-columns:1fr}
+  .chaptergrid{grid-template-columns:repeat(2,1fr)}
+  .grid3,.steps{grid-template-columns:1fr}
+  .navlinks a:not(.btn){display:none}
+  .hero{padding:65px 0}
+  .book{margin-top:30px}
+}
+@media(max-width:530px){
+  .statgrid{grid-template-columns:repeat(2,1fr)}
+  .chaptergrid{grid-template-columns:1fr}
+  .stat:nth-child(2){border-right:0}
+  .tabs{grid-template-columns:repeat(2,1fr)}
+  .sample{padding:23px}
+  .formcard{padding:23px}
+  section{padding:62px 0}
+  h1{letter-spacing:-2px}
+}
+</style>
+</head>
+<body>
+
+<div class="top">
+  THE INDEPENDENT SOLAR SALES FIELD GUIDE
+  <strong> · $19 ONE-TIME</strong>
+</div>
+
+<nav>
+  <div class="container navrow">
+    <a href="#top" class="brand">☀ SELL YOUR OWN SOLAR</a>
+    <div class="navlinks">
+      <a href="#inside">Chapters</a>
+      <a href="#preview">Preview</a>
+      <a href="#faq">FAQ</a>
+      <a href="#order-bottom" class="btn btn-small">Get the Guide</a>
+    </div>
+  </div>
+</nav>
+
+<main id="top">
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="eyebrow">Your pipeline. Your sales. Your future.</div>
+      <h1>Stop Waiting for Leads.<br><span>Start Creating Your Own.</span></h1>
+      <p>
+        A practical guide for solar sales professionals who want
+        to generate their own leads, qualify homeowners, schedule
+        consultations, and build a consistent independent sales routine.
+      </p>
+      <div class="actions">
+        <a class="btn" href="#order-middle">Get the Guide — $19 →</a>
+        <a class="btn btn-outline" href="#preview">Preview the Guide ↓</a>
+      </div>
+      <div class="proof">✓ 8 Chapters &nbsp; ✓ Professional Scripts &nbsp; ✓ Practical Sales Tools</div>
+    </div>
+    <div class="book">
+      <div class="sun">☀</div>
+      <div>
+        <h2>SELL<br>YOUR OWN<br>SOLAR</h2>
+        <p>EXPERT INDEPENDENT SALES GUIDE</p>
+      </div>
+      <div class="price">$19</div>
+    </div>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="container statgrid">
+    <div class="stat"><strong>8</strong><small>Practical Chapters</small></div>
+    <div class="stat"><strong>10</strong><small>Lead-Gen Strategies</small></div>
+    <div class="stat"><strong>Scripts</strong><small>Real Sales Conversations</small></div>
+    <div class="stat"><strong>$19</strong><small>One-Time Purchase</small></div>
+  </div>
+</div>
+
+<section class="soft">
+  <div class="container">
+    <div class="heading">
+      <div class="eyebrow">Become an independent producer</div>
+      <h2>Take Control of Your Sales Pipeline</h2>
+      <p>Stop depending entirely on appointment setters. Build the habits and skills to generate your own solar business.</p>
+    </div>
+    <div class="grid3">
+      <div class="card">
+        <div class="ico">◎</div>
+        <h3>Generate Your Own Leads</h3>
+        <p>Learn practical approaches to referrals, community prospecting, organic marketing and digital lead generation.</p>
+      </div>
+      <div class="card">
+        <div class="ico">✓</div>
+        <h3>Qualify Homeowners</h3>
+        <p>Identify qualified interest, ask better discovery questions, and book consultations with a clear purpose.</p>
+      </div>
+      <div class="card">
+        <div class="ico">↗</div>
+        <h3>Follow Up Consistently</h3>
+        <p>Use appointment confirmations, professional messages, reminders and CRM tracking to keep opportunities moving.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="inside" class="dark">
+  <div class="container">
+    <div class="heading">
+      <div class="eyebrow">Inside the guide</div>
+      <h2>Eight Chapters. One Sales System.</h2>
+      <p>From generating your first independent lead to building a sustainable weekly routine.</p>
+    </div>
+    <div class="chaptergrid">
+      <div class="chapter"><div class="number">CHAPTER 01</div><h3>Independent Sales Foundation</h3><p>Stop waiting for assigned leads. Take ownership of prospecting and activity.</p></div>
+      <div class="chapter"><div class="number">CHAPTER 02</div><h3>Build Your Workday</h3><p>Establish prospecting schedules, clock-in habits and consistent daily routines.</p></div>
+      <div class="chapter"><div class="number">CHAPTER 03</div><h3>Prospect and Qualify</h3><p>Identify homeowner needs, property suitability and qualified opportunities.</p></div>
+      <div class="chapter"><div class="number">CHAPTER 04</div><h3>Professional Sales Scripts</h3><p>Practical openers, contact messages, proposal requests and referrals.</p></div>
+      <div class="chapter"><div class="number">CHAPTER 05</div><h3>Discovery and Objections</h3><p>Electric bill discovery, buyer questions, objections and smokescreens.</p></div>
+      <div class="chapter"><div class="number">CHAPTER 06</div><h3>Appointments and Follow-Up</h3><p>Get consultations scheduled, confirmed and professionally followed up.</p></div>
+      <div class="chapter"><div class="number">CHAPTER 07</div><h3>10 Lead Generation Strategies</h3><p>Combine networking, online marketing, social posts and referrals.</p></div>
+      <div class="chapter"><div class="number">CHAPTER 08</div><h3>Your Sales Operating System</h3><p>Manage a CRM, calendar, reminders, customer notes and activity tracking.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="preview" class="soft">
+  <div class="container">
+    <div class="heading">
+      <div class="eyebrow">Preview the playbook</div>
+      <h2>Real Conversations. Real Next Steps.</h2>
+      <p>Select a topic to see the type of practical language covered in the guide.</p>
+    </div>
+    <div class="preview">
+      <div class="tabs">
+        <button class="tab active" data-example="0">First Contact</button>
+        <button class="tab" data-example="1">Free Proposal</button>
+        <button class="tab" data-example="2">Electric Bill</button>
+        <button class="tab" data-example="3">Follow-Up</button>
+      </div>
+      <div class="sample">
+        <h3 id="sample-title">Opening Conversations</h3>
+        <blockquote id="sample-quote">"Quick question — have you ever compared the cost of solar with what you're paying for electricity now?"</blockquote>
+        <p id="sample-explain">A direct, relevant question helps create a conversation without forcing a long sales pitch.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FIRST ORDER FORM -->
+<section id="order-middle" class="funnel">
+  <div class="container funnelgrid">
+    <div>
+      <div class="eyebrow">Ready to take control?</div>
+      <h2>Start Generating Your Own Solar Business.</h2>
+      <p>Get practical lessons you can apply to your next prospecting session.</p>
+      <ul>
+        <li>8 chapters covering the independent sales process</li>
+        <li>Professional prospecting and follow-up examples</li>
+        <li>Qualification and objection-handling techniques</li>
+        <li>Lead generation and daily workflow systems</li>
+      </ul>
+      <div class="bigprice">$19</div>
+      <p>One-time price · Digital PDF guide</p>
+    </div>
+    <div class="formcard">
+      <h3>Request Your Copy</h3>
+      <p class="note">Enter your details and we'll text you to arrange Apple Cash payment.</p>
+      <div class="form-slot"></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="heading">
+      <div class="eyebrow">Simple process</div>
+      <h2>Get Your Guide in Three Steps</h2>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <strong>STEP 01</strong>
+        <h3>Submit Your Request</h3>
+        <p>Provide your first name, email and mobile number.</p>
+      </div>
+      <div class="step">
+        <strong>STEP 02</strong>
+        <h3>Arrange Payment</h3>
+        <p>We'll contact you by text with Apple Cash payment instructions.</p>
+      </div>
+      <div class="step">
+        <strong>STEP 03</strong>
+        <h3>Receive Your Guide</h3>
+        <p>Once payment is confirmed, your digital guide will be emailed to you.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="soft">
+  <div class="container">
+    <div class="heading">
+      <h2>Frequently Asked Questions</h2>
+    </div>
+    <div class="faq">
+      <details>
+        <summary>Is this guide for new or experienced solar salespeople?</summary>
+        <p>Both. Beginners can learn how to create a prospecting routine, while experienced setters and closers can refine qualification, follow-up and pipeline management.</p>
+      </details>
+      <details>
+        <summary>Does this guide guarantee sales or income?</summary>
+        <p>No. Results depend on your market, skills, consistency, company offerings and other factors. The guide teaches practical processes rather than guaranteed earnings.</p>
+      </details>
+      <details>
+        <summary>Is this a physical book?</summary>
+        <p>No. It is a downloadable digital PDF, delivered by email after payment confirmation.</p>
+      </details>
+      <details>
+        <summary>Does the $19 price include a subscription?</summary>
+        <p>No. The guide is a one-time purchase.</p>
+      </details>
+      <details>
+        <summary>How do I pay?</summary>
+        <p>Submit the request form, and we'll text you to arrange Apple Cash payment. This website does not collect credit card or banking details.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- SECOND ORDER FORM -->
+<section id="order-bottom" class="funnel">
+  <div class="container funnelgrid">
+    <div>
+      <div class="eyebrow">Your next chapter starts here</div>
+      <h2>Stop Waiting for Your Next Appointment.</h2>
+      <p>Learn to generate your own opportunities, qualify prospects and build a stronger independent sales routine.</p>
+      <div class="bigprice">$19</div>
+      <p>One payment. Your digital sales guide.</p>
+    </div>
+    <div class="formcard">
+      <h3>Get Sell Your Own Solar</h3>
+      <p class="note">Request your copy and receive a text about payment and delivery.</p>
+      <div class="form-slot"></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <strong>SELL YOUR OWN SOLAR</strong>
+  <p>Expert Independent Sales Guide · Digital Edition</p>
+  <p>Educational material. Results vary. Follow applicable sales, privacy, marketing and consent requirements.</p>
+</footer>
+
+<script>
+const FORMSPREE_URL="https://formspree.io/f/mkjjkjzo";
+
+const examples=[
+  {
+    title:"Chapter 4 · Opening Conversations",
+    quote:"Quick question — have you ever compared the cost of solar with what you're paying for electricity now?",
+    explanation:"A simple opening designed to identify genuine interest."
+  },
+  {
+    title:"Chapter 4 · Free Proposal Requests",
+    quote:"We can start with your name and property address for a preliminary review. To estimate pricing and potential savings accurately, we'll also need your electric usage.",
+    explanation:"Start the conversation without presenting an unverified preliminary estimate as a final quote."
+  },
+  {
+    title:"Chapter 5 · Electric Bill Discovery",
+    quote:"Do you have a recent electric bill available? That will help us understand your usage and prepare a more useful proposal.",
+    explanation:"Ask clearly for the information required to assess a homeowner's needs."
+  },
+  {
+    title:"Chapter 6 · Follow-Up",
+    quote:"Hi! Just checking in after our solar discussion. Did you have any questions about the options we reviewed, or would another time work better to go over the details?",
+    explanation:"Give the homeowner a clear, low-pressure next step."
+  }
+];
+
+document.querySelectorAll(".tab").forEach(button=>{
+  button.addEventListener("click",()=>{
+    const item=examples[Number(button.dataset.example)];
+    document.querySelectorAll(".tab").forEach(t=>{
+      t.classList.toggle("active",t===button);
+    });
+    document.getElementById("sample-title").textContent=item.title;
+    document.getElementById("sample-quote").textContent='"'+item.quote+'"';
+    document.getElementById("sample-explain").textContent=item.explanation;
+  });
+});
+
+// Install the same functional form in both locations.
+document.querySelectorAll(".form-slot").forEach((slot,index)=>{
+  const id="order-"+(index+1);
+  slot.innerHTML=`
+    <form class="order-form" action="${FORMSPREE_URL}" method="POST">
+      <input type="hidden" name="product" value="Sell Your Own Solar - Expert Independent Sales Guide">
+      <input type="hidden" name="price" value="$19 USD">
+      <input type="hidden" name="form_location" value="${index===0?"Middle":"Bottom"}">
+      <input type="hidden" name="order_reference" class="order-reference">
+
+      <div class="field">
+        <label for="${id}-name">First Name</label>
+        <input id="${id}-name" type="text" name="first_name"
+          placeholder="Your first name" autocomplete="given-name"
+          maxlength="80" required>
+      </div>
+
+      <div class="field">
+        <label for="${id}-email">Email Address</label>
+        <input id="${id}-email" type="email" name="email"
+          placeholder="you@example.com" autocomplete="email" required>
+      </div>
+
+      <div class="field">
+        <label for="${id}-phone">Mobile Phone Number</label>
+        <input id="${id}-phone" type="tel" name="phone"
+          placeholder="(555) 123-4567" autocomplete="tel"
+          minlength="7" maxlength="30" required>
+      </div>
+
+      <label class="consent">
+        <input type="checkbox" name="sms_consent"
+          value="Agreed to order-related text messages" required>
+        <span>I agree to receive text messages regarding this purchase
+        and payment instructions. Message and data rates may apply.
+        No recurring marketing messages are included.</span>
+      </label>
+
+      <button class="btn submit" type="submit">
+        Request My Copy for $19 →
+      </button>
+
+      <div class="status" role="status" aria-live="polite"></div>
+      <div class="safe">🔒 No credit card or banking information collected.</div>
+    </form>
+  `;
+});
+
+document.querySelectorAll(".order-form").forEach(form=>{
+  form.addEventListener("submit",async event=>{
+    event.preventDefault();
+
+    const button=form.querySelector('button[type="submit"]');
+    const status=form.querySelector(".status");
+    const ref=form.querySelector(".order-reference");
+
+    ref.value="SOL-"+Date.now().toString(36).toUpperCase()
+      +"-"+Math.random().toString(36).slice(2,6).toUpperCase();
+
+    button.disabled=true;
+    button.textContent="Submitting your request...";
+    status.className="status";
+    status.textContent="";
+
+    try{
+      const response=await fetch(FORMSPREE_URL,{
+        method:"POST",
+        body:new FormData(form),
+        headers:{Accept:"application/json"}
+      });
+
+      if(!response.ok)throw new Error("Submission failed");
+
+      form.reset();
+      status.className="status success";
+      status.textContent="Your order request has been received! We'll contact you by text with payment instructions. Your guide will be emailed after payment is confirmed.";
+      button.textContent="Request Submitted";
+    }catch(error){
+      status.className="status error";
+      status.textContent="We couldn't submit your request. Please check your connection and try again.";
+      button.disabled=false;
+      button.textContent="Request My Copy for $19 →";
+    }
+  });
+});
+</script>
+</body>
+</html>
