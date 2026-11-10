@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Design your own solar and home battery system with SunXchange. Explore premium equipment, financing options, and a personalized proposal.">
+<title>SunXchange | Build Your Solar Future</title>
+<style>
+:root{--ink:#102331;--muted:#627682;--line:#dce8e7;--paper:#f4f8f6;--white:#fff;--green:#b9f15d;--teal:#087f75;--navy:#071c29;--shadow:0 16px 45px rgba(12,48,48,.09);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);line-height:1.5}button,input,select,textarea{font:inherit}button{cursor:pointer}a{color:inherit;text-decoration:none}button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,a:focus-visible{outline:3px solid #34b3a8;outline-offset:2px}.container{width:min(1260px,calc(100% - 38px));margin:auto}
+.topbar{position:sticky;z-index:20;top:0;background:#fffefdf5;backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}.topbar-inner{display:flex;align-items:center;justify-content:space-between;min-height:72px;gap:18px}.brand{display:flex;align-items:center;gap:11px;color:#0d2e31;font-weight:900;font-size:21px;letter-spacing:-.8px}.brand-mark{width:34px;height:34px;background:#c4ef69;color:#133d30;display:grid;place-items:center;border-radius:11px;transform:rotate(-9deg);font-size:22px}.brand span em{font-style:normal;color:#148d7f}.navlinks{display:flex;gap:26px;align-items:center;font-weight:650;font-size:13px}.navlinks a:hover{color:#087f75}.nav-cta,.btn{border:0;border-radius:12px;padding:13px 19px;background:var(--green);color:#122921;font-size:14px;font-weight:850;display:inline-flex;align-items:center;justify-content:center;gap:9px;transition:transform .18s,box-shadow .18s}.nav-cta:hover,.btn:hover{transform:translateY(-1px);box-shadow:0 7px 24px rgba(16,75,38,.17)}.btn-dark{background:var(--navy);color:#fff}.btn-outline{background:#fff;color:var(--ink);border:1px solid var(--line)}
+.hero{background:radial-gradient(circle at 85% 40%,#1b6256 0%,transparent 35%),linear-gradient(120deg,#061c29,#0a303b 54%,#0a443d);color:#fff;padding:62px 0 45px;overflow:hidden;position:relative}.hero:after{content:"";position:absolute;width:550px;height:550px;border:1px solid rgba(208,255,215,.13);border-radius:50%;right:-200px;top:-270px;box-shadow:0 0 0 80px rgba(255,255,255,.014),0 0 0 160px rgba(255,255,255,.012)}.hero-grid{display:grid;grid-template-columns:1.35fr .65fr;gap:30px;align-items:center;position:relative;z-index:1}.eyebrow{display:inline-flex;gap:8px;align-items:center;text-transform:uppercase;letter-spacing:.14em;font-size:11px;font-weight:850;color:#b9f15d}.eyebrow .dot{width:7px;height:7px;background:#c4f478;border-radius:50%}.hero h1{font-size:clamp(42px,5.9vw,80px);max-width:780px;line-height:1.03;letter-spacing:-.065em;margin:13px 0 17px}.hero h1 .accent{color:var(--green)}.hero p{font-size:16px;color:#c4d7d8;max-width:600px;margin:0 0 26px}.hero-actions{display:flex;flex-wrap:wrap;gap:12px}.hero .btn-outline{background:rgba(255,255,255,.09);color:#fff;border-color:#4b7777}.hero-mini{background:rgba(255,255,255,.07);border:1px solid #3b7770;backdrop-filter:blur(6px);border-radius:23px;padding:28px;box-shadow:0 15px 50px #03171e70}.hero-mini .big{font-size:49px;line-height:1.1;font-weight:900;letter-spacing:-.05em;color:#c8f771}.hero-mini .mini-row{display:flex;justify-content:space-between;border-top:1px solid #31645e;padding:13px 0;color:#e1eeea;gap:16px}.hero-mini .mini-row strong{color:#fff}.hero-mini small{color:#a5c7c5}.strip{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;padding:20px 0}.strip-item{background:#fff;border:1px solid var(--line);border-radius:14px;padding:17px 20px;display:flex;gap:12px;align-items:center}.strip-item b{display:block;font-size:13px}.strip-item small{display:block;color:var(--muted);font-size:12px}.strip-icon{font-size:25px}
+.section{padding:62px 0}.section-header{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:23px}.kicker{color:#168379;font-size:11px;font-weight:850;letter-spacing:.16em;text-transform:uppercase}.section-header h2,.section-title{font-size:clamp(29px,3vw,44px);letter-spacing:-.048em;line-height:1.1;margin:8px 0 9px}.section-header p{margin:0;color:var(--muted);max-width:650px}.pill{border-radius:999px;font-size:12px;background:#e4f4e6;border:1px solid #d3eac8;color:#236751;padding:8px 13px;font-weight:750}
+.builder{display:grid;grid-template-columns:390px minmax(0,1fr);align-items:start;gap:20px}.controls{display:flex;flex-direction:column;gap:16px}.panel,.viewer-shell,.finance-card,.equipment-card,.upgrade,.lead-panel,.demo-panel,.process-card{background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow)}.panel{padding:23px}.panel-head{display:flex;align-items:center;gap:10px;margin-bottom:19px}.num{height:29px;min-width:29px;display:grid;place-items:center;background:#daf6cb;color:#1b6a4c;border-radius:9px;font-size:12px;font-weight:900}.panel h3{margin:0;font-size:17px;letter-spacing:-.025em}.label{font-size:12px;font-weight:800;display:block;margin:18px 0 8px}.helper{color:var(--muted);font-size:11px;margin:6px 0}.choices{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.choice{background:#fff;border:1.5px solid var(--line);border-radius:12px;min-height:54px;padding:10px 7px;text-align:center;font-size:12px;color:#405964;font-weight:780;transition:.16s}.choice:hover{border-color:#6cb1a6}.choice.selected{color:#075b50;border-color:#189d84;background:#e7faf2;box-shadow:inset 0 0 0 1px #189d84}.row{display:flex;align-items:center;justify-content:space-between;gap:12px}.field,.select{width:100%;border:1px solid #d2e1df;padding:12px 13px;border-radius:11px;background:#fff;color:#213944;font-size:13px;min-width:0}.field:focus,.select:focus{outline:2px solid #83d4c0;border-color:#1c9a82}.range{width:100%;accent-color:#138b73;cursor:pointer}.range-labels{display:flex;justify-content:space-between;font-size:10px;color:#8c9ba3}.metric{font-weight:900;font-size:19px;letter-spacing:-.04em}.mini-metric{color:#158676;font-weight:800}.control-note{font-size:11px;color:#59756f;background:#ecf6f1;border-radius:10px;padding:10px 12px;margin-top:12px}.twocol{display:grid;grid-template-columns:1fr 1fr;gap:10px}.viewer-shell{position:sticky;top:92px;overflow:hidden}.viewer-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:20px 22px 0}.viewer-heading h3{font-size:18px;margin:0;letter-spacing:-.03em}.live{font-size:10px;background:#e1f9de;color:#286b36;border-radius:999px;padding:6px 10px;font-weight:850}.visual{height:470px;position:relative;background:radial-gradient(ellipse at 52% 20%,#f1fff8,#e2f3f6 60%,#d3e5df 100%);margin:16px 16px 0;border-radius:17px;overflow:hidden;touch-action:none}.visual canvas{width:100%;height:100%;display:block;touch-action:none}.visual-hint{position:absolute;left:14px;top:14px;border:1px solid #d7e5dc;background:#fffffff0;padding:9px 12px;font-size:11px;border-radius:10px;color:#3f6962;pointer-events:none}.view-tools{position:absolute;right:12px;bottom:12px;display:flex;gap:7px}.icon-btn{background:#fffffff0;border:1px solid #d4e6de;border-radius:9px;padding:9px 12px;font-size:12px;font-weight:850;color:#24453f}.icon-btn:hover{background:#dcf5de}.no-webgl{display:flex;position:absolute;inset:0;align-items:center;justify-content:center;padding:35px;text-align:center;background:#e5f4ed;color:#28473e}.viewer-metrics{display:grid;grid-template-columns:repeat(4,1fr);padding:20px 17px;gap:10px}.viewer-metrics div{text-align:center;border-right:1px solid var(--line)}.viewer-metrics div:last-child{border-right:0}.viewer-metrics b{font-size:21px;letter-spacing:-.055em;display:block}.viewer-metrics small{color:var(--muted);font-size:11px}.viewer-foot{padding:0 21px 20px;color:#78878b;font-size:11px}.viewer-foot strong{color:#236f5d}
+.finance-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.finance-card{padding:27px;position:relative}.finance-card h3{font-size:25px;letter-spacing:-.045em;margin:3px 0}.finance-card p{font-size:13px;color:var(--muted);margin:6px 0 19px}.finance-card ul{list-style:none;padding:0;margin:0 0 23px;display:grid;gap:12px}.finance-card li{display:flex;gap:9px;align-items:start;font-size:13px}.check{flex:none;color:#0d9676;font-weight:900}.finance-card.selected{border:2px solid #0a8b71;background:#f4fff9;padding:26px}.finance-tag{font-weight:900;color:#0b7a68;text-transform:uppercase;font-size:10px;letter-spacing:.13em}.finance-choose{background:#f0f6f4;border:1px solid #cfe1d8;width:100%;padding:12px;border-radius:10px;font-weight:850;color:#1b5449}.selected .finance-choose{color:white;background:#0c866f;border-color:#0c866f}
+.equipment-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.equipment-card{padding:21px;box-shadow:none}.equipment-card .emoji{font-size:29px}.equipment-card h3{font-size:16px;margin:9px 0 4px}.equipment-card p{font-size:12px;color:var(--muted);margin:0}.spec{font-size:11px;display:inline-block;margin-top:14px;color:#0d7160;background:#e7f9ef;padding:7px 9px;border-radius:8px;font-weight:800}.warranty-note{color:var(--muted);font-size:12px;margin-top:18px}
+.upgrade-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}.upgrade{padding:17px;cursor:pointer;box-shadow:none;min-height:190px;position:relative}.upgrade input{position:absolute;right:14px;top:14px;width:18px;height:18px;accent-color:#078972}.upgrade:has(input:checked){border-color:#0d9c7e;background:#f1fff8;box-shadow:inset 0 0 0 1px #0d9c7e}.upgrade .emoji{font-size:31px}.upgrade h3{font-size:15px;margin:12px 0 6px}.upgrade p{font-size:12px;color:var(--muted);margin:0}.upgrade .tag{display:block;color:#0e8c71;font-size:10px;font-weight:850;margin-top:11px}
+.lead-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:start}.demo-panel{background:linear-gradient(145deg,#062633,#104e47);color:white;border:0;padding:30px}.demo-panel .demo-top{display:flex;justify-content:space-between;align-items:center}.demo-panel h3{font-size:26px;letter-spacing:-.045em;margin:18px 0 9px}.demo-panel p{color:#c8dddd;font-size:13px}.demo-system{border:1px solid #4d8077;background:#ffffff0b;border-radius:17px;padding:20px;margin:21px 0}.demo-system .label2{font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:#9fc8c0;font-weight:850}.demo-system .large{font-size:36px;font-weight:900;letter-spacing:-.06em}.demo-line{display:flex;justify-content:space-between;gap:15px;padding:8px 0;border-bottom:1px solid #ffffff1a;font-size:12px}.demo-line:last-child{border:0}.demo-line span{color:#a7cbc5}.demo-steps{display:grid;gap:10px}.demo-step{display:flex;gap:12px;align-items:start;font-size:12px;color:#dcefe9}.demo-step b{display:grid;place-items:center;flex:none;width:22px;height:22px;border-radius:50%;background:#baf267;color:#1d3d2c;font-size:11px}.lead-panel{padding:27px}.lead-panel h3{font-size:24px;letter-spacing:-.04em;margin:0}.lead-panel p{font-size:12px;color:var(--muted)}.field-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}.lead-panel label.field-label{display:block;font-size:12px;font-weight:800;margin:14px 0 7px}.lead-panel textarea{resize:vertical;min-height:72px}.checkbox-line{display:flex;align-items:start;gap:10px;margin:17px 0;font-size:12px;color:#536b70}.checkbox-line input{margin-top:4px;accent-color:#078972}.submit{width:100%;min-height:52px}.form-status{font-size:12px;margin-top:13px;min-height:20px}.form-status.error{color:#ba443e}.form-status.success{color:#08745b}.privacy{font-size:10px!important;color:#899699!important}
+.process-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.process-card{padding:24px;box-shadow:none}.process-card .num{margin-bottom:16px}.process-card h3{font-size:16px;margin:0 0 9px}.process-card p{font-size:12px;color:var(--muted);margin:0}.footer{margin-top:62px;background:#061a25;color:#d9eeea;padding:35px 0}.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:30px}.footer p{color:#9cbdba;font-size:12px;max-width:700px}.footer .brand{color:white}.footer small{color:#91b3ae;font-size:11px}
+@media(max-width:1020px){.builder{grid-template-columns:340px minmax(0,1fr)}.visual{height:410px}.upgrade-grid{grid-template-columns:repeat(2,1fr)}.equipment-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:820px){.navlinks a:not(.nav-cta){display:none}.hero-grid{grid-template-columns:1fr}.hero-mini{display:none}.builder{grid-template-columns:1fr}.viewer-shell{position:relative;top:auto;grid-row:1}.controls{grid-row:2;display:grid;grid-template-columns:1fr 1fr;align-items:start}.visual{height:420px}.lead-grid{grid-template-columns:1fr}.strip{grid-template-columns:1fr}.process-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:600px){.container{width:min(100% - 28px,1260px)}.topbar-inner{min-height:61px}.brand{font-size:18px}.nav-cta{padding:10px 12px;font-size:12px}.hero{padding:45px 0}.hero h1{font-size:48px}.hero p{font-size:14px}.section{padding:40px 0}.controls,.finance-grid,.equipment-grid,.upgrade-grid,.process-grid{grid-template-columns:1fr}.visual{height:350px;margin:10px 10px 0}.viewer-heading{padding:16px 15px 0}.viewer-metrics{gap:0;padding:16px 8px}.viewer-metrics b{font-size:16px}.viewer-metrics small{font-size:9px}.viewer-foot{padding:0 14px 18px}.panel,.lead-panel,.demo-panel{padding:20px}.field-row{grid-template-columns:1fr}.section-header{align-items:start;flex-direction:column}.footer-inner{flex-direction:column;align-items:start}.upgrade{min-height:0}.hero-actions{flex-direction:column;align-items:stretch}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+<header class="topbar"><div class="container topbar-inner">
+  <a class="brand" href="#top"><span class="brand-mark">☀</span><span>SUN<span style="color:#0c9a78">X</span>CHANGE</span></a>
+  <nav class="navlinks" aria-label="Primary"><a href="#builder">3D builder</a><a href="#financing">Lease vs. purchase</a><a href="#upgrades">Upgrades</a><a href="#equipment">Equipment</a><a class="nav-cta" href="#request">Get my design →</a></nav>
+</div></header>
+<main id="top">
+<section class="hero"><div class="container hero-grid"><div>
+  <div class="eyebrow"><span class="dot"></span> YOUR HOME. YOUR ENERGY. YOUR DESIGN.</div>
+  <h1>Build your solar future <span class="accent">in 3D.</span></h1>
+  <p>Design a custom solar and battery setup, explore premium equipment, compare financing paths, and request a personalized proposal—all in one place.</p>
+  <div class="hero-actions"><a href="#builder" class="btn">Start designing for free ↗</a><a href="#request" class="btn btn-outline">See my proposal preview</a></div>
+</div><div class="hero-mini" aria-label="What you'll create">
+  <span class="eyebrow">THE SUNXCHANGE EXPERIENCE</span><div class="big" style="margin:24px 0 9px">01 → 04</div>
+  <div class="mini-row"><span>01 &nbsp; Design</span><strong>Interactive 3D layout</strong></div>
+  <div class="mini-row"><span>02 &nbsp; Equip</span><strong>Solar + batteries</strong></div>
+  <div class="mini-row"><span>03 &nbsp; Customize</span><strong>Upgrades + financing</strong></div>
+  <div class="mini-row"><span>04 &nbsp; Review</span><strong>Personalized proposal</strong></div>
+  <small>Free preliminary concept · No obligation</small>
+</div></div></section>
+<div class="container strip"><div class="strip-item"><span class="strip-icon">✦</span><div><b>Design it yourself</b><small>Rotate, zoom and explore your setup</small></div></div><div class="strip-item"><span class="strip-icon">⚡</span><div><b>Compare premium equipment</b><small>Panels, inverters and backup batteries</small></div></div><div class="strip-item"><span class="strip-icon">✓</span><div><b>Personalized review</b><small>Real pricing only after a site review</small></div></div></div>
+<section class="section" id="builder"><div class="container"><div class="section-header"><div><span class="kicker">01 / INTERACTIVE BUILDER</span><h2>Your home. Your solar system.</h2><p>Choose your roof, size your system, and rotate the house to see where the panels go. This is a concept visualization, not a surveyed roof design.</p></div><span class="pill">● Live 3D preview</span></div>
+<div class="builder">
+ <div class="controls">
+  <div class="panel"><div class="panel-head"><span class="num">01</span><h3>Choose your installation</h3></div>
+   <label class="label">Mounting style</label><div class="choices" id="mountChoices"><button class="choice selected" type="button" data-mount="roof">⌂ &nbsp; Rooftop solar</button><button class="choice" type="button" data-mount="ground">▤ &nbsp; Ground mount</button></div>
+   <label class="label">Home / roof style</label><div class="choices" id="roofChoices"><button type="button" class="choice selected" data-roof="ns">↕ North / South</button><button type="button" class="choice" data-roof="ew">↔ East / West</button><button type="button" class="choice" data-roof="multi">◇ Multi-direction</button><button type="button" class="choice" data-roof="flat">▱ Flat roof</button></div>
+   <div id="groundControls" hidden><label class="label" for="tilt">Ground rack tilt <span id="tiltOut" class="mini-metric">25°</span></label><input id="tilt" class="range" type="range" min="10" max="40" step="5" value="25"><div class="range-labels"><span>10°</span><span>40°</span></div><label class="label" for="groundRows">Ground mount rows</label><select id="groundRows" class="select"><option value="2">2 rows</option><option value="3" selected>3 rows</option><option value="4">4 rows</option></select><p class="helper">Array is shown next to the home. Actual ground space and setbacks require a site review.</p></div>
+  </div>
+  <div class="panel"><div class="panel-head"><span class="num">02</span><h3>Size your system</h3></div>
+   <div class="row"><label class="label" for="size" style="margin:0">Solar system size</label><span class="metric"><span id="sizeOut">9.0</span> kW</span></div>
+   <input class="range" type="range" id="size" min="4" max="30" step="0.5" value="9"><div class="range-labels"><span>4 kW</span><span>30 kW</span></div>
+   <div class="twocol"><div><label class="label" for="manualSize">Enter exact target (kW)</label><input class="field" type="number" id="manualSize" min="4" max="30" step="0.1" value="9.0"></div><div><label class="label" for="monthlyKwh">Monthly electric use (kWh)</label><input class="field" type="number" id="monthlyKwh" min="1" placeholder="e.g. 850" inputmode="numeric"></div></div>
+   <button class="btn btn-outline" type="button" id="autoSize" style="margin-top:12px;width:100%">Size system to my kWh →</button>
+   <p class="control-note">Sizing uses a rough planning assumption of <b>1,100 kWh per kW per year</b>. Actual production varies by roof, shading, location and engineering.</p>
+  </div>
+  <div class="panel"><div class="panel-head"><span class="num">03</span><h3>Choose your equipment</h3></div>
+   <label class="label" for="panelType">Premium solar panels</label><select class="select" id="panelType"><option value="qcells">Qcells Q.TRON — 430 W</option><option value="rec">REC premium — 460 W</option><option value="silfab">Silfab premium — 440 W</option></select>
+   <label class="label" for="inverterType">Inverter technology</label><select class="select" id="inverterType"><option value="enphase">Enphase IQ8 microinverters</option><option value="solaredge">SolarEdge optimizer + inverter</option><option value="string">Traditional string inverter</option></select>
+   <label class="label" for="batteryType">Battery backup</label><select class="select" id="batteryType"><option value="none">No battery — solar only</option><option value="tesla">Tesla Powerwall 3 — 13.5 kWh</option><option value="enphase">Enphase IQ Battery 5P — 5 kWh</option><option value="franklin">FranklinWH aPower 2 — 15 kWh</option><option value="nexis">SolarEdge Nexis — 4.9 kWh/block</option></select>
+   <div id="batteryQtyWrap" hidden><label class="label" for="batteryQty">Number of battery units / blocks</label><select class="select" id="batteryQty"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option></select></div>
+   <p class="helper">Equipment pairing and backup capability must be confirmed by the designer; some combinations require changes.</p>
+  </div>
+ </div>
+ <div class="viewer-shell">
+  <div class="viewer-heading"><h3>Live 3D home visualization</h3><span class="live">● LIVE PREVIEW</span></div>
+  <div class="visual" id="visual"><div class="visual-hint">↔ Drag to rotate &nbsp; • &nbsp; Scroll or pinch to zoom</div><div id="noWebGL" class="no-webgl">Loading the interactive 3D preview… If it does not appear, check your internet connection. You can still configure your system below.</div><div class="view-tools"><button class="icon-btn" type="button" id="zoomOut" aria-label="Zoom out">−</button><button class="icon-btn" type="button" id="resetView">↺ Reset</button><button class="icon-btn" type="button" id="zoomIn" aria-label="Zoom in">+</button></div></div>
+  <div class="viewer-metrics"><div><b id="statKw">9.0</b><small>Solar kW</small></div><div><b id="statPanels">21</b><small>Panels</small></div><div><b id="statYear">9,900</b><small>Est. kWh / yr</small></div><div><b id="statBattery">0</b><small>Battery kWh</small></div></div>
+  <div class="viewer-foot"><strong id="visualLabel">21 rooftop panels · North / South</strong><br>Illustrative 3D model; not an aerial scan, site measurement, shade study, installation plan, or production guarantee.</div>
+ </div>
+</div></div></section>
+<section class="section" id="financing" style="padding-top:12px"><div class="container"><div class="section-header"><div><span class="kicker">02 / YOUR FINANCING PATH</span><h2>Two great ways to go solar.</h2><p>Explore a lease/PPA-style plan or ownership. Specific availability, pricing and terms are subject to qualification and the official proposal.</p></div></div><div class="finance-grid">
+ <div class="finance-card selected" data-finance-card="lease"><span class="finance-tag">Option A</span><h3>Lease / PPA</h3><p>Focus on predictable energy costs without buying the equipment upfront.</p><ul><li><span class="check">✓</span> Potential $0 upfront offers for qualifying homeowners</li><li><span class="check">✓</span> Utility-bill replacement with a contracted solar payment</li><li><span class="check">✓</span> Often includes monitoring and maintenance provisions</li><li><span class="check">✓</span> Possible fixed-rate or escalator choices, where offered</li><li><span class="check">✓</span> Lower need for upfront equipment capital</li></ul><button class="finance-choose" type="button" data-finance="lease">✓ Selected: Lease / PPA</button></div>
+ <div class="finance-card" data-finance-card="purchase"><span class="finance-tag">Option B</span><h3>Purchase / Own</h3><p>Own your solar investment with a cash purchase or qualified loan.</p><ul><li><span class="check">✓</span> Own the system outright or pay it off over time</li><li><span class="check">✓</span> Potentially greater long-term bill savings</li><li><span class="check">✓</span> Choose cash or financing, when available</li><li><span class="check">✓</span> Equipment may add long-term home value</li><li><span class="check">✓</span> Eligible ownership incentives depend on current rules</li></ul><button class="finance-choose" type="button" data-finance="purchase">Choose purchase / ownership</button></div>
+</div><p class="warranty-note">Terms, ownership, payment increases, energy credits, incentives, transfer options and service obligations differ by product and provider. No rate or savings is guaranteed here.</p></div></section>
+<section class="section" id="equipment" style="padding-top:12px"><div class="container"><div class="section-header"><div><span class="kicker">03 / PREMIUM COMPONENTS</span><h2>Equipment built to perform.</h2><p>Explore the technologies available to request. We’ll verify compatibility and local product availability with your custom design.</p></div></div><div class="equipment-grid">
+ <div class="equipment-card"><div class="emoji">☀️</div><h3>Premium black solar panels</h3><p>High-output Qcells, REC and Silfab-style modules, with clean all-black aesthetics.</p><span class="spec">Select from 430–460 W panels</span></div>
+ <div class="equipment-card"><div class="emoji">⚙️</div><h3>Smart conversion</h3><p>Explore module-level Enphase microinverters, SolarEdge optimizers or string inverter designs.</p><span class="spec">Monitoring + design flexibility</span></div>
+ <div class="equipment-card"><div class="emoji">🔋</div><h3>Battery backup</h3><p>Explore Tesla, Enphase, FranklinWH and SolarEdge storage. Backup circuits and required controllers are designed later.</p><span class="spec">Storage sizes vary by model</span></div>
+ </div><p class="warranty-note"><b>Premium warranties:</b> Example manufacturer coverages include Qcells Q.TRON BLK M-G2+ 25-year product/performance, Enphase IQ8 25-year limited microinverter, Tesla Powerwall 3 10-year limited, Enphase 5P up to 15 years/6,000 cycles, and FranklinWH aPower 2 15 years/throughput limit. Exact warranty depends on the installed SKU and provider, exclusions apply. Roof penetrations, labor, workmanship and system performance guarantees must be confirmed in the signed contract.</p></div></section>
+<section class="section" id="upgrades" style="padding-top:12px"><div class="container"><div class="section-header"><div><span class="kicker">04 / COMPLETE HOME UPGRADES</span><h2>Upgrade more than your energy.</h2><p>Add any projects you want evaluated alongside solar. These are optional requests, not automatic inclusions or guaranteed $0-down offers.</p></div></div><div class="upgrade-grid">
+ <label class="upgrade"><input type="checkbox" data-upgrade="Tree removal / trimming"><div class="emoji">🌳</div><h3>Tree removal</h3><p>Ask about tree removal or trimming to improve solar exposure.</p><span class="tag">REQUEST EVALUATION</span></label>
+ <label class="upgrade"><input type="checkbox" data-upgrade="Roof replacement"><div class="emoji">🏠</div><h3>Roof replacement</h3><p>Explore a replacement roof as part of your home energy plan.</p><span class="tag">REQUEST EVALUATION</span></label>
+ <label class="upgrade"><input type="checkbox" data-upgrade="Electric panel upgrade"><div class="emoji">⚡</div><h3>Electric panel upgrade</h3><p>Ask about service-panel capacity and electrical upgrades.</p><span class="tag">REQUEST EVALUATION</span></label>
+ <label class="upgrade"><input type="checkbox" data-upgrade="Flat roof mounting kit"><div class="emoji">▱</div><h3>Flat roof kit</h3><p>Explore engineered flat-roof racking and attachment options.</p><span class="tag">REQUEST EVALUATION</span></label>
+ </div></div></section>
+<section class="section" id="request" style="padding-top:12px"><div class="container"><div class="section-header"><div><span class="kicker">05 / YOUR PRELIMINARY PROPOSAL</span><h2>Send us your dream setup.</h2><p>We’ll use your selections as the starting point for a tailored roof layout, equipment recommendation and finance review.</p></div></div><div class="lead-grid">
+<div class="demo-panel"><div class="demo-top"><span class="eyebrow">YOUR PREVIEW</span><span style="font-size:10px;color:#b8f26d;font-weight:800">DESIGN SUMMARY</span></div><h3>Here’s what we’ll review with you.</h3><p>Example of the details included in your personalized demo—not a final quotation or engineered design.</p><div class="demo-system"><div class="label2">SUNXCHANGE · PRELIMINARY CONCEPT</div><div class="large"><span id="previewKw">9.0</span> kW <span style="font-size:14px;color:#baf267;letter-spacing:0">Solar</span></div>
+ <div class="demo-line"><span>Roof & mounting</span><strong id="previewRoof">North / South · Rooftop</strong></div><div class="demo-line"><span>Module layout</span><strong id="previewPanels">21 × 430 W</strong></div><div class="demo-line"><span>Annual illustration</span><strong id="previewProduction">~9,900 kWh</strong></div><div class="demo-line"><span>Inverter</span><strong id="previewInverter">Enphase IQ8</strong></div><div class="demo-line"><span>Battery</span><strong id="previewBattery">None</strong></div><div class="demo-line"><span>Financing</span><strong id="previewFinance">Lease / PPA</strong></div><div class="demo-line"><span>Home upgrades</span><strong id="previewUpgrades">None requested</strong></div></div>
+ <button class="btn" type="button" id="copySetup" style="width:100%">⧉ Copy my solar setup</button><p id="copyStatus" aria-live="polite" style="font-size:11px;text-align:center"></p>
+ <div class="demo-steps"><div class="demo-step"><b>1</b><div><strong>Receive a custom demo</strong><br>Review conceptual solar placement and preliminary monthly financing illustrations, where available.</div></div><div class="demo-step"><b>2</b><div><strong>Review and approve a formal proposal</strong><br>Discuss estimated production, actual contract terms, equipment and potential savings.</div></div><div class="demo-step"><b>3</b><div><strong>Move to documents & survey</strong><br>If qualified and you choose to proceed, the installer can provide documents for e-signature and coordinate a site survey.</div></div></div>
+</div>
+<div class="lead-panel"><h3>Request your free design</h3><p>No pressure. Your selections are attached automatically; you can also copy them for yourself.</p>
+<form id="leadForm" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+  <input type="hidden" name="_subject" value="New SunXchange Solar Builder Lead"><input type="hidden" name="solar_setup" id="solarSetupHidden"><input type="hidden" name="source" value="SunXchange 3D Builder"><input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
+  <div class="field-row"><div><label class="field-label" for="firstName">First name *</label><input class="field" id="firstName" name="first_name" autocomplete="given-name" required></div><div><label class="field-label" for="lastName">Last name *</label><input class="field" id="lastName" name="last_name" autocomplete="family-name" required></div></div>
+  <div class="field-row"><div><label class="field-label" for="email">Email address *</label><input class="field" id="email" name="email" type="email" autocomplete="email" required></div><div><label class="field-label" for="phone">Phone number *</label><input class="field" id="phone" name="phone" type="tel" autocomplete="tel" required></div></div>
+  <div class="field-row"><div><label class="field-label" for="zip">ZIP code *</label><input class="field" id="zip" name="zip" type="text" pattern="[0-9]{5}" maxlength="5" inputmode="numeric" autocomplete="postal-code" placeholder="5-digit ZIP" required></div><div><label class="field-label" for="utility">Electric utility</label><select id="utility" class="select" name="utility"><option value="">Choose your utility</option><option>Atlantic City Electric</option><option>PSE&G</option><option>JCP&L</option><option>PPL</option><option>PECO</option><option>Delmarva Power</option><option>BGE</option><option>Other / Unsure</option></select></div></div>
+  <div class="field-row"><div><label class="field-label" for="bill">Avg. monthly electric bill ($)</label><input class="field" id="bill" name="monthly_bill_usd" type="number" min="0" max="10000" placeholder="e.g. 220"></div><div><label class="field-label" for="contactMethod">Preferred contact method</label><select class="select" name="contact_method" id="contactMethod"><option>Email</option><option>Text</option><option>Phone call</option></select></div></div>
+  <label class="field-label" for="notes">Anything else we should know?</label><textarea class="field" id="notes" name="notes" placeholder="Existing solar? Shady roof? Want battery-only? Roof replacement? Tell us here."></textarea>
+  <label class="checkbox-line"><input type="checkbox" id="owner" name="homeowner" value="Yes" required><span>I own this home or am authorized to request information for it. *</span></label>
+  <label class="checkbox-line"><input type="checkbox" id="consent" name="contact_consent" value="Yes" required><span>I agree to be contacted by SunXchange about this request at the email/phone provided. This is not an agreement to purchase, finance or electronically sign anything. *</span></label>
+  <button type="submit" class="btn submit" id="submitBtn">Send my custom design request ↗</button>
+  <div id="formStatus" role="status" class="form-status" aria-live="polite"></div>
+  <p class="privacy">Your details are submitted through Formspree once the endpoint is configured. Don’t enter financial account or sensitive identity information here. By submitting, you’re requesting information—not guaranteed savings, loan approval or an installation date.</p>
+</form></div>
+</div></div></section>
+<section class="section" style="padding-top:12px"><div class="container"><div class="section-header"><div><span class="kicker">AFTER YOUR REQUEST</span><h2>A clear path from concept to install.</h2></div></div><div class="process-grid"><div class="process-card"><span class="num">01</span><h3>Custom solar review</h3><p>We validate your usage, roof type, shading and requested equipment, then create an actual design.</p></div><div class="process-card"><span class="num">02</span><h3>Pricing + financing review</h3><p>Review real payment terms and equipment compatibility. You decide whether to move forward.</p></div><div class="process-card"><span class="num">03</span><h3>Documents + site survey</h3><p>After approval, an installer may provide contract documents and coordinate survey, permits and installation steps.</p></div></div></div></section>
+</main>
+<footer class="footer"><div class="container footer-inner"><div><div class="brand"><span class="brand-mark">☀</span><span>SUNXCHANGE</span></div><p>Solar design and battery planning made simple. All visual layouts and production estimates are illustrative. Financing, equipment availability, warranties and site-suitability are confirmed in a formal proposal.</p></div><small>© <span id="year"></span> SunXchange. All rights reserved.</small></div></footer>
+<script>
+// IMPORTANT: Replace the placeholder in the <form action="..."> with your Formspree endpoint.
+const $ = id => document.getElementById(id);
+const panels={qcells:{name:'Qcells Q.TRON',watts:430},rec:{name:'REC premium',watts:460},silfab:{name:'Silfab premium',watts:440}};
+const batteries={none:{name:'No battery',kwh:0},tesla:{name:'Tesla Powerwall 3',kwh:13.5},enphase:{name:'Enphase IQ Battery 5P',kwh:5},franklin:{name:'FranklinWH aPower 2',kwh:15},nexis:{name:'SolarEdge Nexis battery block',kwh:4.9}};
+const inverters={enphase:'Enphase IQ8 microinverters',solaredge:'SolarEdge optimizer + inverter',string:'Traditional string inverter'};
+const roofLabels={ns:'North / South',ew:'East / West',multi:'Multi-direction',flat:'Flat roof'};
+const state={mount:'roof',roof:'ns',kw:9,panel:'qcells',inverter:'enphase',battery:'none',batteryQty:1,finance:'lease',tilt:25,groundRows:3};
+const num=n=>Number(n).toLocaleString('en-US'); const panelCount=()=>Math.ceil(state.kw*1000/panels[state.panel].watts);const batteryKwh=()=>+(batteries[state.battery].kwh*(state.battery==='none'?0:state.batteryQty)).toFixed(1);
+const upgrades=()=>[...document.querySelectorAll('[data-upgrade]:checked')].map(i=>i.dataset.upgrade);
+function setupSummary(){return [
+  'SUNXCHANGE SOLAR DESIGN REQUEST',
+  `Mounting: ${state.mount==='roof'?'Rooftop':'Ground-mounted'}`,
+  `Roof: ${roofLabels[state.roof]}`,
+  `Solar target: ${state.kw.toFixed(1)} kW`,
+  `Solar panels: ${panelCount()} x ${panels[state.panel].name} (${panels[state.panel].watts} W)`,
+  `Estimated modeled DC size: ${(panelCount()*panels[state.panel].watts/1000).toFixed(2)} kW`,
+  `Illustrative annual production: ${num(Math.round(state.kw*1100))} kWh (not site verified)`,
+  `Monthly electricity use: ${$('monthlyKwh').value||'Not provided'} kWh`,
+  `Inverter: ${inverters[state.inverter]}`,
+  `Battery: ${state.battery==='none'?'None':`${state.batteryQty} x ${batteries[state.battery].name} (${batteryKwh()} kWh nominal total)`}`,
+  ...(state.mount==='ground'?[`Ground rack tilt: ${state.tilt}°`, `Ground rack rows: ${state.groundRows}`]:[]),
+  `Preferred financing: ${state.finance==='lease'?'Lease / PPA':'Purchase / ownership'}`,
+  `Requested home upgrades: ${upgrades().join(', ')||'None'}`,
+  'All choices are preliminary; installer verifies suitability, compatibility, pricing and terms.'
+].join('\n')}
+function updateUI(redraw=true){
+  $('sizeOut').textContent=state.kw.toFixed(1);$('manualSize').value=state.kw.toFixed(1);$('size').value=state.kw;
+  $('groundControls').hidden=state.mount!=='ground';$('batteryQtyWrap').hidden=state.battery==='none';
+  $('tiltOut').textContent=state.tilt+'°';
+  $('statKw').textContent=state.kw.toFixed(1);$('statPanels').textContent=num(panelCount());$('statYear').textContent=num(Math.round(state.kw*1100));$('statBattery').textContent=batteryKwh().toLocaleString('en-US');
+  $('visualLabel').textContent=`${panelCount()} ${state.mount==='roof'?'rooftop':'ground-mount'} panels · ${roofLabels[state.roof]}`;
+  $('previewKw').textContent=state.kw.toFixed(1);$('previewRoof').textContent=`${roofLabels[state.roof]} · ${state.mount==='roof'?'Rooftop':'Ground mount'}`;
+  $('previewPanels').textContent=`${panelCount()} × ${panels[state.panel].watts} W`;
+  $('previewProduction').textContent=`~${num(Math.round(state.kw*1100))} kWh`;
+  $('previewInverter').textContent=inverters[state.inverter];
+  $('previewBattery').textContent=state.battery==='none'?'None':`${state.batteryQty} × ${batteries[state.battery].name} (${batteryKwh()} kWh)`;
+  $('previewFinance').textContent=state.finance==='lease'?'Lease / PPA':'Purchase / Ownership';$('previewUpgrades').textContent=upgrades().join(', ')||'None requested';
+  $('solarSetupHidden').value=setupSummary();
+  document.querySelectorAll('[data-roof]').forEach(el=>el.classList.toggle('selected',el.dataset.roof===state.roof));
+  document.querySelectorAll('[data-mount]').forEach(el=>el.classList.toggle('selected',el.dataset.mount===state.mount));
+  document.querySelectorAll('[data-finance-card]').forEach(el=>el.classList.toggle('selected',el.dataset.financeCard===state.finance));
+  document.querySelectorAll('[data-finance]').forEach(el=>el.textContent=el.dataset.finance===state.finance?`✓ Selected: ${state.finance==='lease'?'Lease / PPA':'Purchase'}`:`Choose ${el.dataset.finance==='lease'?'Lease / PPA':'purchase / ownership'}`);
+  if(redraw)window.sunxRebuild?.();
+}
+document.querySelectorAll('[data-roof]').forEach(b=>b.addEventListener('click',()=>{state.roof=b.dataset.roof;updateUI()}));
+document.querySelectorAll('[data-mount]').forEach(b=>b.addEventListener('click',()=>{state.mount=b.dataset.mount;updateUI();if(state.mount==='ground')window.sunxGround?.()}));
+document.querySelectorAll('[data-finance]').forEach(b=>b.addEventListener('click',()=>{state.finance=b.dataset.finance;updateUI(false)}));
+document.querySelectorAll('[data-upgrade]').forEach(b=>b.addEventListener('change',()=>updateUI(false)));
+$('size').addEventListener('input',e=>{state.kw=+e.target.value;updateUI()});
+$('manualSize').addEventListener('change',e=>{state.kw=Math.max(4,Math.min(30,+e.target.value||9));updateUI()});
+$('autoSize').addEventListener('click',()=>{const usage=+$('monthlyKwh').value;if(!usage||usage<1){$('monthlyKwh').focus();return}state.kw=Math.max(4,Math.min(30,Math.round((usage*12/1100)*2)/2));updateUI()});
+$('monthlyKwh').addEventListener('input',()=>updateUI(false));
+$('panelType').addEventListener('change',e=>{state.panel=e.target.value;updateUI()});
+$('inverterType').addEventListener('change',e=>{state.inverter=e.target.value;updateUI(false)});
+$('batteryType').addEventListener('change',e=>{state.battery=e.target.value;updateUI()});
+$('batteryQty').addEventListener('change',e=>{state.batteryQty=+e.target.value;updateUI()});
+$('tilt').addEventListener('input',e=>{state.tilt=+e.target.value;updateUI()});
+$('groundRows').addEventListener('change',e=>{state.groundRows=+e.target.value;updateUI()});
+$('year').textContent=new Date().getFullYear();
+async function copyText(text){try{if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(text);return true}const t=document.createElement('textarea');t.value=text;document.body.appendChild(t);t.select();const ok=document.execCommand('copy');t.remove();return ok}catch{return false}}
+$('copySetup').addEventListener('click',async()=>{$('copyStatus').textContent=await copyText(setupSummary())?'✓ Copied! Paste your selections into any message.':'Copy was blocked; please use the design summary in the form.'});
+$('leadForm').addEventListener('submit',async e=>{
+  e.preventDefault(); const form=e.currentTarget; if(!form.reportValidity())return;
+  $('solarSetupHidden').value=setupSummary();
+  const endpoint=form.action;
+  const status=$('formStatus');status.className='form-status';
+  if(endpoint.includes('YOUR_FORMSPREE_ID')){status.classList.add('error');status.textContent='Form not connected yet: add your Formspree endpoint to the form action before publishing.';return}
+  $('submitBtn').disabled=true;$('submitBtn').textContent='Sending request…';
+  try{
+    const r=await fetch(endpoint,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}});
+    const payload=await r.json().catch(()=>({}));
+    if(!r.ok)throw new Error((payload.errors||[]).map(x=>x.message).join(' ')||'Submission failed. Please try again.');
+    status.classList.add('success');status.textContent='✓ Your design request was sent. We’ll follow up using your preferred contact method.';
+    form.reset();$('solarSetupHidden').value=setupSummary();
+  }catch(err){status.classList.add('error');status.textContent=`Could not send your request: ${err.message}. Please try again.`}
+  finally{$('submitBtn').disabled=false;$('submitBtn').textContent='Send my custom design request ↗'}
+});
+window.SunXchangeBuilder={state,panelCount};
+updateUI(false);
+</script>
+<script type="module">
+import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.1/build/three.module.js';
+const {state,panelCount}=window.SunXchangeBuilder;
+// ------- 3D VISUALIZATION (Three.js) -------
+let renderer,scene,camera,world;const visual=$('visual');let yaw=-0.7,pitch=0.52,distance=24;let drag=null;const pointerMap=new Map();let pinchDistance=null;
+const roofMat=new THREE.MeshStandardMaterial({color:0x293a41,roughness:.8});
+const wallMat=new THREE.MeshStandardMaterial({color:0xe8e6da,roughness:.85});
+const trimMat=new THREE.MeshStandardMaterial({color:0xfaf9f3,roughness:.68});
+const glassMat=new THREE.MeshStandardMaterial({color:0x6b9caa,metalness:.28,roughness:.22});
+const frameMat=new THREE.MeshStandardMaterial({color:0x0a161b,metalness:.65,roughness:.27});
+const solarMat=new THREE.MeshStandardMaterial({color:0x111f2b,metalness:.38,roughness:.2,side:THREE.DoubleSide});
+const cellLine=new THREE.LineBasicMaterial({color:0x456170,transparent:true,opacity:.5});
+const yardMat=new THREE.MeshStandardMaterial({color:0xb6d0b3,roughness:1});
+const foliageMat=new THREE.MeshStandardMaterial({color:0x327c59,roughness:1});
+const barkMat=new THREE.MeshStandardMaterial({color:0x806750,roughness:1});
+function mesh(geometry,material,parent,x=0,y=0,z=0){const o=new THREE.Mesh(geometry,material);o.position.set(x,y,z);o.castShadow=true;o.receiveShadow=true;parent.add(o);return o}
+function box(parent,w,h,d,material,x=0,y=0,z=0){return mesh(new THREE.BoxGeometry(w,h,d),material,parent,x,y,z)}
+function makePanel(parent,x,y,z,w,h,rx=0,ry=0,rz=0){const p=new THREE.Group();p.position.set(x,y,z);p.rotation.set(rx,ry,rz);parent.add(p);box(p,w,.055,h,frameMat,0,0,0);box(p,w-.075,.061,h-.075,solarMat,0,.035,0);
+  const pts=[];for(let i=1;i<4;i++){let px=-w/2+w*i/4;pts.push(px,.071,-h/2+.07,px,.071,h/2-.07)}for(let i=1;i<7;i++){let pz=-h/2+h*i/7;pts.push(-w/2+.06,.071,pz,w/2-.06,.071,pz)}
+  let geo=new THREE.BufferGeometry();geo.setAttribute('position',new THREE.Float32BufferAttribute(pts,3));p.add(new THREE.LineSegments(geo,cellLine));return p}
+function houseBase(parent){box(parent,11,5,7,wallMat,0,2.5,0);box(parent,11.2,.16,7.2,trimMat,0,.14,0);
+  for(const x of [-3.5,2.7]){box(parent,1.6,1.5,.10,trimMat,x,2.8,3.58);box(parent,1.4,1.28,.13,glassMat,x,2.8,3.65);box(parent,.09,1.3,.04,trimMat,x,2.8,3.73);box(parent,1.4,.09,.04,trimMat,x,2.8,3.73)}
+  box(parent,1.35,2.7,.18,new THREE.MeshStandardMaterial({color:0x315b55}),-.45,1.52,3.62);mesh(new THREE.SphereGeometry(.065,8,8),new THREE.MeshStandardMaterial({color:0xe8cf7b}),parent,.06,1.54,3.76);
+  for(const x of [-3.5,3.5]){box(parent,.12,1.3,1.7,trimMat,x,2.8,-3.58);box(parent,.13,1.15,1.52,glassMat,x,2.8,-3.67)}
+  for(const z of [-2,1.5]){box(parent,.14,1.4,1.4,glassMat,5.58,2.9,z);box(parent,.14,1.4,1.4,glassMat,-5.58,2.9,z)}
+  mesh(new THREE.CylinderGeometry(.04,.04,.13,10),new THREE.MeshStandardMaterial({color:0xccc19b}),parent,-.36,1.6,3.74);
+}
+function addGable(parent,axis='x',centerX=0,centerZ=0,width=11,depth=7,y=5){
+  // x-axis ridge: roof falls north/south. z-axis ridge: falls east/west.
+  const half=axis==='x'?depth/2:width/2;const rise=2.1;const slope=Math.atan2(rise,half);const len=Math.hypot(half,rise);
+  for(const sign of [-1,1]){
+    const roof=box(parent,axis==='x'?width+.5:len+.35,.16,axis==='x'?len+.35:depth+.5,roofMat,
+      centerX+(axis==='z'?sign*half/2:0),y+rise/2+.02,centerZ+(axis==='x'?sign*half/2:0));
+    if(axis==='x')roof.rotation.x=sign*slope;else roof.rotation.z=-sign*slope;
+  }
+  // end gables - triangular prism via triangle extrude, shaded wall
+  const shape=new THREE.Shape();shape.moveTo(-half,0);shape.lineTo(half,0);shape.lineTo(0,rise);shape.closePath();
+  const wedge=new THREE.ExtrudeGeometry(shape,{depth:axis==='x'?width:depth,bevelEnabled:false});
+  const w=mesh(wedge,wallMat,parent,axis==='x'?centerX-width/2:centerX-width/2, y,axis==='x'?centerZ-half:centerZ-depth/2);
+  if(axis==='x'){w.rotation.y=Math.PI/2;w.position.set(centerX-width/2,y,centerZ+half)}else{w.rotation.y=0;w.position.set(centerX-width/2,y,centerZ-depth/2)}
+  return{half,rise,slope};
+}
+function makeRoof(parent){if(state.roof==='flat'){box(parent,11.6,.38,7.6,roofMat,0,5.17,0);box(parent,11.7,.15,7.7,trimMat,0,5.34,0);return}
+  if(state.roof==='ns'){addGable(parent,'x')}else if(state.roof==='ew'){addGable(parent,'z')}else{
+    addGable(parent,'x');const wing=new THREE.Group();wing.position.set(2.65,0,2.2);parent.add(wing);box(wing,5,4,4.5,wallMat,0,2,0);addGable(wing,'z',0,0,5.2,4.7,4.05);
+  }}
+function scatterRoofPanels(parent,count){let placed=0;
+  function addGrid(target,max,cols,rows,base,stepU,stepV,transform){for(let i=0;i<max&&placed<count;i++){const c=i%cols,r=Math.floor(i/cols);const [x,y,z,rx,ry,rz]=transform(c,r,base,stepU,stepV);makePanel(target,x,y,z,.71,1.22,rx,ry,rz);placed++}}
+  const slope=Math.atan2(2.1,3.5), slopeEW=Math.atan2(2.1,5.5);
+  if(state.roof==='ns'){
+   const positions=[];for(const side of [1,-1])for(let r=0;r<5;r++)for(let c=0;c<9;c++){
+      const x=(c-4)*1.10, z=side*(.45+r*.64),y=7.08-Math.abs(z)*.6+.13;
+      positions.push([x,y,z,side*slope,0,0]);}
+   for(let i=0;i<Math.min(count,positions.length);i++){const [x,y,z,rx,ry,rz]=positions[i];makePanel(parent,x,y,z,.93,.58,rx,ry,rz)}
+  }else if(state.roof==='ew'){
+    const positions=[];for(const side of [1,-1])for(let r=0;r<5;r++)for(let c=0;c<7;c++){
+      const x=side*(.45+r*.65),z=(c-3)*.95,y=7.08-Math.abs(x)*(2.1/5.5)+.14;
+      positions.push([x,y,z,0,0,-side*slopeEW])}
+    // More panels than 70? cap by available rows at 70.
+    for(let i=0;i<Math.min(count,positions.length);i++){const [x,y,z,rx,ry,rz]=positions[i];makePanel(parent,x,y,z,.55,.82,rx,ry,rz)}
+  }else if(state.roof==='multi'){
+    // Three roof faces in the conceptual layout.
+    const positions=[];for(const side of [-1,1])for(let r=0;r<4;r++)for(let c=0;c<7;c++){
+      const x=-4.8+c*.95,z=side*(.6+r*.7),y=7.1-Math.abs(z)*.6+.16;
+      positions.push([x,y,z,side*slope,0,0])}
+    for(let r=0;r<3;r++)for(let c=0;c<5;c++){const x=2.65+(r-1)*.8,z=2.2+(c-2)*.75,y=6.22-Math.abs(x-2.65)*.68+.18;positions.push([x,y,z,0,0,-slope])}
+    for(let i=0;i<Math.min(count,positions.length);i++){const [x,y,z,rx,ry,rz]=positions[i];makePanel(parent,x,y,z,.78,.58,rx,ry,rz)}
+  }else{
+    for(let i=0;i<count;i++){const col=i%10,row=Math.floor(i/10);makePanel(parent,-4.65+col*1.02,5.7,row*.72-2.6,.9,.58,-.22,0,0)}
+  }
+}
+function scatterGroundPanels(parent,count){const rows=state.groundRows,cols=Math.ceil(count/rows);const tilt=THREE.MathUtils.degToRad(state.tilt);const spacing=1.12;const groups=new THREE.Group();groups.position.set(0,0,-7.5);parent.add(groups);
+ for(let i=0;i<count;i++){const col=i%cols,row=Math.floor(i/cols);const x=(col-(cols-1)/2)*spacing,z=(row-(rows-1)/2)*1.8;makePanel(groups,x,1.15,z,1.00,1.43,-tilt);box(groups,.065,1.05,.065,frameMat,x,.5,z+.3)}
+ box(groups,cols*spacing+.4,.14,.12,frameMat,0,.55,(rows-1)*.9+.1);
+}
+function makeTree(parent,x,z,scale=1){mesh(new THREE.CylinderGeometry(.16,.21,2.2*scale,8),barkMat,parent,x,1.1*scale,z);mesh(new THREE.IcosahedronGeometry(1.35*scale,1),foliageMat,parent,x,2.75*scale,z)}
+function makeBatteries(parent){if(state.battery==='none')return;for(let i=0;i<state.batteryQty;i++){
+  const material=new THREE.MeshStandardMaterial({color:0xe8ecea,roughness:.35,metalness:.22});box(parent,.8,1.65,.3,material,5.8+i*.9,1.12,1.25);box(parent,.54,.075,.315,new THREE.MeshStandardMaterial({color:0x0e8b79}),5.8+i*.9,1.75,1.25);
+}}
+function rebuild3D(){if(!world)return;while(world.children.length){const child=world.children[0];world.remove(child);child.traverse?.(obj=>{obj.geometry?.dispose?.()})}
+ mesh(new THREE.PlaneGeometry(250,250),yardMat,world,0,-.025,0).rotation.x=-Math.PI/2;
+ const structure=new THREE.Group();world.add(structure);houseBase(structure);makeRoof(structure);
+ if(state.mount==='roof')scatterRoofPanels(structure,panelCount());else scatterGroundPanels(world,panelCount());
+ makeBatteries(structure);
+ // Landscaping + driveway
+ box(world,3,.028,8.6,new THREE.MeshStandardMaterial({color:0xd1d3c5,roughness:1}),-3.9,.015,7.8);
+ for(const [x,z,s] of [[-10,-7,.94],[10,-9,1.16],[-9,9,.7],[10,10,.8]])makeTree(world,x,z,s);
+ for(let i=0;i<8;i++){const x=-4.7+i*1.3;mesh(new THREE.SphereGeometry(.42,9,8),new THREE.MeshStandardMaterial({color:i%2?0x4a9469:0x31785a}),world,x,.35,4.8)}
+}
+function setCameraHome(){if(!camera)return;distance=state.mount==='ground'?32:24;updateCamera()}
+function updateCamera(){if(!camera)return;const target=new THREE.Vector3(0,2.6,-1.5);camera.position.set(target.x+distance*Math.sin(yaw)*Math.cos(pitch),target.y+distance*Math.sin(pitch),target.z+distance*Math.cos(yaw)*Math.cos(pitch));camera.lookAt(target)}
+function init3D(){try{scene=new THREE.Scene();renderer=new THREE.WebGLRenderer({antialias:true,alpha:true,powerPreference:'low-power'});renderer.setPixelRatio(Math.min(devicePixelRatio,1.7));renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.setClearColor(0xffffff,0);visual.prepend(renderer.domElement);$('noWebGL').style.display='none';
+ camera=new THREE.PerspectiveCamera(42,1,.1,500);world=new THREE.Group();scene.add(world);scene.add(new THREE.HemisphereLight(0xffffff,0x7c9c79,2.25));const sun=new THREE.DirectionalLight(0xffffff,2.5);sun.position.set(-12,25,12);sun.castShadow=true;sun.shadow.mapSize.set(1024,1024);sun.shadow.camera.left=-32;sun.shadow.camera.right=32;sun.shadow.camera.top=32;sun.shadow.camera.bottom=-32;scene.add(sun);
+ const resize=()=>{const box=visual.getBoundingClientRect();if(box.width&&box.height){renderer.setSize(box.width,box.height,false);camera.aspect=box.width/box.height;camera.updateProjectionMatrix();renderer.render(scene,camera)}};const observer=new ResizeObserver(resize);observer.observe(visual);updateCamera();rebuild3D();resize();
+ let animating=true;const tick=()=>{if(!animating)return;renderer.render(scene,camera);requestAnimationFrame(tick)};tick();document.addEventListener('visibilitychange',()=>{if(!document.hidden&&!animating){animating=true;tick()}else if(document.hidden)animating=false});
+ }catch(err){console.warn('3D visualization unavailable:',err);$('noWebGL').style.display='flex'}}
+visual.addEventListener('pointerdown',e=>{if(e.target.closest('button'))return;pointerMap.set(e.pointerId,{x:e.clientX,y:e.clientY});visual.setPointerCapture(e.pointerId);if(pointerMap.size===1){drag={x:e.clientX,y:e.clientY};pinchDistance=null}else{drag=null;const p=[...pointerMap.values()];pinchDistance=Math.hypot(p[0].x-p[1].x,p[0].y-p[1].y)}});
+visual.addEventListener('pointermove',e=>{if(!pointerMap.has(e.pointerId))return;pointerMap.set(e.pointerId,{x:e.clientX,y:e.clientY});if(pointerMap.size>=2){const p=[...pointerMap.values()];const next=Math.hypot(p[0].x-p[1].x,p[0].y-p[1].y);if(pinchDistance){distance=Math.max(12,Math.min(52,distance*(pinchDistance/Math.max(1,next))))}pinchDistance=next;updateCamera();return}if(!drag)return;yaw-=(e.clientX-drag.x)*.009;pitch=Math.max(.14,Math.min(1.27,pitch+(e.clientY-drag.y)*.006));drag={x:e.clientX,y:e.clientY};updateCamera()});
+function releasePointer(e){pointerMap.delete(e.pointerId);pinchDistance=null;const p=[...pointerMap.values()];drag=p.length===1?{...p[0]}:null}
+visual.addEventListener('pointerup',releasePointer);visual.addEventListener('pointercancel',releasePointer);
+visual.addEventListener('wheel',e=>{e.preventDefault();distance=Math.max(12,Math.min(52,distance+e.deltaY*.02));updateCamera()},{passive:false});
+$('zoomIn').addEventListener('click',()=>{distance=Math.max(12,distance-3);updateCamera()});
+$('zoomOut').addEventListener('click',()=>{distance=Math.min(52,distance+3);updateCamera()});
+$('resetView').addEventListener('click',()=>{yaw=-.7;pitch=.52;setCameraHome()});
+window.sunxRebuild=rebuild3D;window.sunxGround=setCameraHome;
+init3D();
+</script>
+</body>
+</html>
